@@ -1,0 +1,1090 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Chinstrap sports decision platform prototype" />
+  <title>Chinstrap — Better sports decisions</title>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="prototype.css" />
+</head>
+
+<body>
+  <section class="screen active" id="screen-landing" aria-label="Chinstrap landing page">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <nav class="site-nav site-nav--left" aria-label="Primary navigation">
+          <button class="nav-pill active" type="button" data-scroll="screen-landing">Home</button>
+          <a href="#trust-preview">Reviews</a>
+          <a href="#discover-preview">Schools &amp; organizations</a>
+        </nav>
+        <button class="site-brand reset-button" type="button" data-screen="landing" aria-label="Chinstrap home">
+          <img src="assets/chinstrap-notch-logo-v2.png" alt="Chinstrap" />
+        </button>
+        <nav class="site-nav site-nav--right" aria-label="Secondary navigation">
+          <a href="#community-preview">Community</a>
+          <a href="#pricing-preview">Pricing</a>
+          <a href="#site-contact">Contact</a>
+          <button class="button button--text" type="button" data-screen="login">Sign in</button>
+          <button class="button button--primary" type="button" data-screen="onboarding">Join free</button>
+        </nav>
+        <button class="menu-button reset-button" type="button" data-toast="Mobile navigation preview" aria-label="Open menu"><i
+            class="fa-solid fa-bars" aria-hidden="true"></i></button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero hero--cinematic">
+        <div class="container">
+          <div class="cinematic-hero">
+            <img class="cinematic-hero__image" src="assets/hero-cinematic-v2.png"
+              alt="A diverse group of athletes bringing their hands together before a game" />
+            <div class="cinematic-hero__veil"></div>
+            <img class="cinematic-hero__notch" src="assets/header-notch.svg" alt="" aria-hidden="true" />
+
+            <div class="cinematic-hero__top">
+              <span class="live-pill"><i class="fa-solid fa-signal" aria-hidden="true"></i> Live community evidence</span>
+              <div class="voice-stack" aria-label="More than 12,400 verified community reviews">
+                <span>JS</span><span>AM</span><span>TK</span><b>+12.4k voices</b>
+              </div>
+            </div>
+
+            <div class="cinematic-hero__copy">
+              <p>Real people. Verified experiences. Better decisions.</p>
+              <h1>Choose the team you’ll never <em>second-guess.</em></h1>
+              <span>Search programs, understand the full story, and compare what matters before your family commits.</span>
+            </div>
+
+            <button class="story-button" type="button"
+              data-toast="The full product story video would open here." aria-label="Play the Chinstrap story">
+              <i class="fa-solid fa-play" aria-hidden="true"></i><span>See how trust works</span>
+            </button>
+
+            <aside class="hero-signal" aria-label="Live trust snapshot">
+              <header><span>Trust snapshot</span><i class="fa-solid fa-circle-check" aria-hidden="true"></i></header>
+              <div><b>4.8</b><span><strong>Northstar Academy</strong><small>142 verified reviews · High confidence</small></span></div>
+              <footer><span>Player development</span><strong>92% positive</strong></footer>
+            </aside>
+
+            <div class="search-dock">
+              <form class="search-box" id="landing-search">
+                <label class="search-box__field">
+                  <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                  <span class="sr-only">Search</span>
+                  <input type="search" value="Soccer programs near Chicago"
+                    aria-label="Search programs, coaches, or organizations" />
+                </label>
+                <label class="search-dock__type"><i class="fa-solid fa-layer-group" aria-hidden="true"></i><select
+                    aria-label="Search type"><option>All types</option><option>Programs</option><option>Coaches</option><option>Agents</option></select></label>
+                <button class="button button--primary" type="submit">Find my fit <i class="fa-solid fa-arrow-right"
+                    aria-hidden="true"></i></button>
+              </form>
+              <div class="popular-searches"><span>Explore quickly:</span><button class="pill" type="button"
+                  data-panel="discover">Soccer</button><button class="pill" type="button"
+                  data-panel="discover">Basketball</button><button class="pill" type="button"
+                  data-panel="discover">High schools</button><button class="pill" type="button"
+                  data-panel="discover">Verified only</button></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="proof-strip" aria-label="Platform statistics">
+        <div class="container proof-strip__grid">
+          <div><strong>12,400+</strong><span>verified community reviews</span></div>
+          <div><strong>2,800+</strong><span>programs and organizations</span></div>
+          <div><strong>48 hrs</strong><span>average verification review</span></div>
+          <div><strong>100%</strong><span>ratings explain their method</span></div>
+        </div>
+      </section>
+
+      <section class="section section--community" id="community-preview">
+        <div class="container">
+          <div class="community-preview">
+            <div class="community-preview__copy">
+              <p class="eyebrow eyebrow--light">The living sports network</p>
+              <h2>Don’t just research the game. <em>Live inside it.</em></h2>
+              <p>Highlights, honest conversations, tournament moments, and verified people now sit beside the decision
+                tools. It is the social layer the web experience was missing.</p>
+              <ul>
+                <li><i class="fa-solid fa-bolt" aria-hidden="true"></i><span><strong>Your signal, not random
+                      noise</strong>Trending, For You, My Sport, and What’s New feeds.</span></li>
+                <li><i class="fa-solid fa-shield" aria-hidden="true"></i><span><strong>Context you can
+                      trust</strong>Verified roles, affiliations, and review history travel with every profile.</span></li>
+                <li><i class="fa-solid fa-people-group" aria-hidden="true"></i><span><strong>One connected
+                      journey</strong>Follow, post, comment, discover, review, compare, and message.</span></li>
+              </ul>
+              <button class="button button--primary" type="button" data-panel="community">Open community prototype <i
+                  class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            </div>
+            <div class="social-stage" aria-label="Chinstrap community preview">
+              <article class="social-card social-card--back">
+                <img src="assets/social-track.png" alt="A track athlete clearing a hurdle" />
+                <span>What’s new · Track</span>
+              </article>
+              <article class="social-card social-card--middle">
+                <img src="assets/social-coach.png" alt="A coach leading a basketball practice" />
+                <span>Coach perspective</span>
+              </article>
+              <article class="social-card social-card--front">
+                <header><img src="assets/social-avatar-1.png" alt="Jordan Ellis" /><span><strong>Jordan
+                      Ellis</strong><small><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Verified athlete ·
+                      18m</small></span><i class="fa-solid fa-ellipsis"></i></header>
+                <p>Trust the work nobody sees. Great session with the Northstar group today. <b>#NextLevel</b></p>
+                <img class="social-card__media" src="assets/social-athlete.png" alt="Soccer player in action" />
+                <footer><span><i class="fa-solid fa-heart"></i> 284</span><span><i
+                      class="fa-regular fa-comment"></i> 36</span><span><i class="fa-solid fa-paper-plane"></i>
+                    Share</span></footer>
+              </article>
+              <div class="social-orbit social-orbit--one"><i class="fa-solid fa-heart"></i><b>+284</b></div>
+              <div class="social-orbit social-orbit--two"><i class="fa-solid fa-user-plus"></i><b>New connection</b></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="how">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Less searching. More confident decisions.</h2>
+            <p>Chinstrap turns scattered opinions into a clear, evidence-led journey without hiding what is verified and
+              what is not.</p>
+          </div>
+          <div class="steps">
+            <article><span>01</span>
+              <h3>Tell us what matters</h3>
+              <p>Set sport, location, age group, budget, and priorities once. Your discovery feed becomes useful
+                immediately.</p>
+            </article>
+            <article><span>02</span>
+              <h3>Compare real evidence</h3>
+              <p>See review confidence, cost, travel, coaching themes, and verified outcomes in the same view.</p>
+            </article>
+            <article><span>03</span>
+              <h3>Choose your next move</h3>
+              <p>Save a shortlist, compare programs side by side, contact an organization, or share an eligible review.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--soft" id="discover-preview">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Evidence in context</p>
+              <h2>More than a star rating.</h2>
+            </div><button class="button button--secondary" type="button" data-panel="discover">Explore all
+              programs</button>
+          </div>
+          <div class="feature-grid">
+            <article class="featured-program">
+              <img src="assets/northstar-school.png" alt="Northstar Academy school building" />
+              <div class="featured-program__content"><span class="tag tag--verified"><i class="fa-solid fa-circle-check"
+                    aria-hidden="true"></i> Verified program</span>
+                <h3>Northstar Academy</h3>
+                <div class="rating"><strong>4.8</strong><i class="fa-solid fa-star" aria-hidden="true"></i><span>142
+                    verified reviews</span></div>
+                <div class="meta"><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Chicago,
+                    IL</span><span><i class="fa-solid fa-futbol" aria-hidden="true"></i> Soccer</span><span><i
+                      class="fa-solid fa-users" aria-hidden="true"></i> U9–U19</span></div>
+                <p>Known for player development, positive coaching, and consistent college placement. Rating confidence
+                  is high.</p><button class="button button--primary" type="button" data-panel="program">View full
+                  program evidence</button>
+              </div>
+            </article>
+            <div class="review-preview" id="trust-preview">
+              <article><span class="tag tag--verified">Verified parent</span>
+                <blockquote>“The coaches gave us a clear development plan and followed through all season.”</blockquote>
+                <footer><span class="mini-avatar"><i class="fa-solid fa-user" aria-hidden="true"></i></span> Soccer
+                  parent · September 2026</footer>
+              </article>
+              <article><span class="tag tag--verified">Verified athlete</span>
+                <blockquote>“Training is demanding, but feedback is specific and the team culture is supportive.”
+                </blockquote>
+                <footer><span class="mini-avatar"><i class="fa-solid fa-user" aria-hidden="true"></i></span> U17 athlete
+                  · August 2026</footer>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--insight" id="insight-preview">
+        <div class="container insight-showcase">
+          <div class="insight-showcase__copy">
+            <p class="eyebrow eyebrow--light">Insight Athlete A.I.</p>
+            <h2>Your next move, backed by your actual game.</h2>
+            <p>Compare your profile with real college rosters, reveal fit gaps, and turn performance data into a clear recruiting plan.</p>
+            <div class="insight-feature-list">
+              <article><i class="fa-solid fa-wand-magic-sparkles"></i><span><strong>Explainable match scores</strong><small>See why a program fits across athletic, academic, and development signals.</small></span></article>
+              <article><i class="fa-solid fa-chart-line"></i><span><strong>Development priorities</strong><small>Know which profile gaps will make the biggest difference next.</small></span></article>
+              <article><i class="fa-solid fa-clock-rotate-left"></i><span><strong>Analysis history</strong><small>Track changes across a recruiting season with Plus and Family plans.</small></span></article>
+            </div>
+            <div class="button-row"><button class="button button--lime" type="button" data-screen="onboarding">Build my athlete profile</button><button class="button button--ghost-light" type="button" data-screen="login">See a demo analysis</button></div>
+          </div>
+          <div class="insight-console" aria-label="AI athlete insight preview">
+            <header><span><i class="fa-solid fa-sparkles"></i> INSIGHT / JORDAN ELLIS</span><b>Updated today</b></header>
+            <div class="insight-score"><div><strong>87</strong><span>College fit readiness</span></div><em>High confidence</em></div>
+            <div class="signal-bars">
+              <div><span>Athletic fit</span><i><b style="width:92%"></b></i><strong>92</strong></div>
+              <div><span>Academic fit</span><i><b style="width:84%"></b></i><strong>84</strong></div>
+              <div><span>Roster opportunity</span><i><b style="width:76%"></b></i><strong>76</strong></div>
+            </div>
+            <div class="ai-recommendation"><i class="fa-solid fa-bolt"></i><span><strong>Your highest-impact move</strong><small>Add verified sprint and endurance benchmarks to improve match accuracy across 14 programs.</small></span></div>
+            <div class="match-mini-grid"><article><span>01</span><strong>Northstar College</strong><b>91% fit</b></article><article><span>02</span><strong>Lakeside University</strong><b>86% fit</b></article><article><span>03</span><strong>Metro State</strong><b>82% fit</b></article></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--trust" id="verification-preview">
+        <div class="container trust-showcase">
+          <div class="verification-board">
+            <header><span><i class="fa-solid fa-shield-check"></i> Verification center</span><b>3 of 4 complete</b></header>
+            <article class="complete"><i class="fa-solid fa-circle-check"></i><span><strong>Identity</strong><small>Profile name and date of birth confirmed</small></span><em>Verified</em></article>
+            <article class="complete"><i class="fa-solid fa-circle-check"></i><span><strong>School or college</strong><small>Academic email confirmed</small></span><em>Verified</em></article>
+            <article class="complete"><i class="fa-solid fa-circle-check"></i><span><strong>Sports affiliation</strong><small>Roster or athlete profile reviewed</small></span><em>Verified</em></article>
+            <article><i class="fa-solid fa-link"></i><span><strong>Team connection</strong><small>Connect a coach, club, or guardian</small></span><button type="button" data-screen="onboarding" data-step-start="4">Connect</button></article>
+          </div>
+          <div>
+            <p class="eyebrow">Trust is a product feature</p>
+            <h2>Every badge should mean something.</h2>
+            <p>Chinstrap separates identity, role, school, team, and review eligibility so families can understand exactly what has—and has not—been verified.</p>
+            <ul class="check-list"><li><i class="fa-solid fa-check"></i> Multiple verification paths: email, roster link, or proof upload</li><li><i class="fa-solid fa-check"></i> Private documents never appear on public profiles</li><li><i class="fa-solid fa-check"></i> Clear pending, approved, and action-needed states</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="roles">
+        <div class="container">
+          <div class="section-heading">
+            <h2>One platform, shaped around your role.</h2>
+            <p>Progressive onboarding reveals only the tools and permissions each person needs.</p>
+          </div>
+          <div class="role-grid">
+            <button type="button" data-screen="onboarding" data-role="athlete"><i class="fa-solid fa-person-running"
+                aria-hidden="true"></i>
+              <h3>Athletes</h3>
+              <p>Build a profile, track development, discover programs, and manage opportunities.</p>
+            </button>
+            <button type="button" data-screen="onboarding" data-role="parent"><i class="fa-solid fa-people-roof"
+                aria-hidden="true"></i>
+              <h3>Parents</h3>
+              <p>Safely link athletes, compare programs, and manage family decisions.</p>
+            </button>
+            <button type="button" data-screen="onboarding" data-role="coach"><i class="fa-solid fa-clipboard-user"
+                aria-hidden="true"></i>
+              <h3>Coaches & agents</h3>
+              <p>Claim credentials, present experience, and manage verified affiliations.</p>
+            </button>
+            <button type="button" data-screen="onboarding" data-role="organization"><i class="fa-solid fa-building"
+                aria-hidden="true"></i>
+              <h3>Organizations</h3>
+              <p>Manage programs, staff, reviews, reporting, and public information.</p>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--pricing" id="pricing-preview">
+        <div class="container">
+          <div class="section-heading">
+            <div><p class="eyebrow">Simple ways to start</p><h2>Community access is free. Insight grows with you.</h2></div>
+            <p>Use Chinstrap for discovery, reviews, and community at no cost. Add AI analyses only when they become useful.</p>
+          </div>
+          <div class="pricing-grid">
+            <article><span class="plan-icon"><i class="fa-solid fa-people-group"></i></span><small>EVERYONE</small><h3>Community</h3><div class="plan-price">$0 <em>/ forever</em></div><ul><li>Discover and compare programs</li><li>Verified reviews and community</li><li>Saved lists and messaging</li></ul><button class="button button--secondary full-width" type="button" data-screen="onboarding">Join free</button></article>
+            <article class="featured"><span class="plan-badge">MOST POPULAR</span><span class="plan-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span><small>ATHLETES</small><h3>Insight Plus</h3><div class="plan-price">$14.99 <em>/ month</em></div><ul><li>30 Insight credits each month</li><li>12 months of analysis history</li><li>Explainable college-fit insights</li></ul><button class="button button--primary full-width" type="button" data-screen="onboarding" data-role="athlete">Start athlete setup</button></article>
+            <article><span class="plan-icon"><i class="fa-solid fa-house-user"></i></span><small>HOUSEHOLDS</small><h3>Insight Family</h3><div class="plan-price">$24.99 <em>/ month</em></div><ul><li>75 shared Insight credits</li><li>Linked athlete profiles</li><li>12 months of analysis history</li></ul><button class="button button--secondary full-width" type="button" data-screen="onboarding" data-role="parent">Set up my family</button></article>
+          </div>
+          <p class="pricing-note">Prefer one-time access? Trial, Explorer, and Recruiting credit packs start at $4.99.</p>
+        </div>
+      </section>
+
+      <section class="section section--compact">
+        <div class="container app-download">
+          <div><span class="tag tag--verified"><i class="fa-solid fa-mobile-screen"></i> Chinstrap mobile</span><h2>Carry your sports network with you.</h2><p>Post updates, follow opportunities, manage verification, and receive recruiting signals wherever the season takes you.</p><div class="store-buttons"><button type="button" data-toast="App Store preview opened."><i class="fa-brands fa-apple"></i><span><small>Download on the</small>App Store</span></button><button type="button" data-toast="Google Play preview opened."><i class="fa-brands fa-google-play"></i><span><small>Get it on</small>Google Play</span></button></div></div>
+          <div class="phone-preview"><div class="phone-shell"><span class="phone-notch"></span><header><b>9:41</b><i class="fa-solid fa-signal"></i></header><p>MY SPORTS PULSE</p><h3>Good morning, Jamie.</h3><article><img src="assets/social-athlete.png" alt="Athlete community post" /><span><strong>Jordan moved up 3 spots</strong><small>New Insight analysis · 91% match</small></span></article><footer><i class="fa-solid fa-house"></i><i class="fa-solid fa-compass"></i><i class="fa-solid fa-plus"></i><i class="fa-regular fa-message"></i><i class="fa-regular fa-user"></i></footer></div></div>
+        </div>
+      </section>
+
+      <section class="section section--compact">
+        <div class="container">
+          <div class="final-cta">
+            <div>
+              <h2>Start with what matters to you.</h2>
+              <p>Set up your role and preferences in under three minutes. Optional details can wait.</p>
+            </div><button class="button button--primary" type="button" data-screen="onboarding">Create your profile <i
+                class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="site-contact">
+      <div class="container footer-main">
+        <div class="footer-brand"><img src="assets/chinstrap-notch-logo-v2.png" alt="Chinstrap" /><h3>Better sports decisions start with the full story.</h3><p>Honest reviews, verified connections, community context, and personalized athlete intelligence—in one trusted platform.</p><div class="store-buttons store-buttons--dark"><button type="button" data-toast="App Store preview opened."><i class="fa-brands fa-apple"></i><span><small>Download on the</small>App Store</span></button><button type="button" data-toast="Google Play preview opened."><i class="fa-brands fa-google-play"></i><span><small>Get it on</small>Google Play</span></button></div></div>
+        <div class="footer-links"><div><h4>Platform</h4><a href="#discover-preview">Discover programs</a><a href="#trust-preview">Verified reviews</a><a href="#community-preview">Community</a><a href="#insight-preview">Insight Athlete A.I.</a><a href="#pricing-preview">Pricing</a></div><div><h4>For you</h4><a href="#roles">Athletes</a><a href="#roles">Parents &amp; guardians</a><a href="#roles">Coaches &amp; directors</a><a href="#roles">Agents &amp; advisors</a><a href="#roles">Organizations</a></div><div><h4>Company</h4><a href="#how">How it works</a><a href="#verification-preview">Trust &amp; verification</a><a href="#">About Chinstrap</a><a href="#site-contact">Contact us</a><a href="#">Help center</a></div></div>
+      </div>
+      <div class="container footer-contact"><span><i class="fa-solid fa-location-dot"></i> 1441 Woodmont Lane NW #476, Atlanta, GA 30318</span><a href="mailto:info@chinstrap.com"><i class="fa-regular fa-envelope"></i> info@chinstrap.com</a><a href="tel:+16789080321"><i class="fa-solid fa-phone"></i> +1 678 908 0321</a></div>
+      <div class="container footer-bottom"><span>© 2026 Chinstrap. All rights reserved.</span><nav><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Cookies</a><a href="#">Accessibility</a></nav><div><button type="button" aria-label="Instagram" data-toast="Instagram profile opened."><i class="fa-brands fa-instagram"></i></button><button type="button" aria-label="Facebook" data-toast="Facebook profile opened."><i class="fa-brands fa-facebook-f"></i></button><button type="button" aria-label="X" data-toast="X profile opened."><i class="fa-brands fa-x-twitter"></i></button><button type="button" aria-label="Back to top" data-scroll="screen-landing"><i class="fa-solid fa-arrow-up"></i></button></div></div>
+    </footer>
+  </section>
+
+  <section class="screen auth-screen" id="screen-login" aria-label="Sign in to Chinstrap">
+    <div class="auth-shell">
+      <button class="auth-brand reset-button" type="button" data-screen="landing"><img src="assets/chinstrap-notch-logo-v2.png" alt="Chinstrap" /></button>
+      <button class="auth-back button button--text" type="button" data-screen="landing"><i class="fa-solid fa-arrow-left"></i> Back to home</button>
+      <div class="auth-orbit auth-orbit--one"><img src="assets/social-avatar-1.png" alt="" /><span>Verified athlete</span></div>
+      <div class="auth-orbit auth-orbit--two"><img src="assets/social-avatar-2.png" alt="" /><span>Trusted coach</span></div>
+      <div class="auth-card">
+        <span class="auth-icon"><i class="fa-solid fa-lock"></i></span>
+        <p class="eyebrow">Welcome back</p>
+        <h1>Your sports world is waiting.</h1>
+        <p>Sign in to access your private dashboard, community, AI analysis, saved programs, messages, and verification center.</p>
+        <form id="login-form">
+          <label>Email address<input id="login-email" type="email" value="demo@chinstrap.com" autocomplete="email" required /></label>
+          <label>Password<span class="label-row"><button type="button" data-toast="A secure reset link would be sent to your email.">Forgot password?</button></span><span class="password-field"><input id="login-password" type="password" value="chinstrap" autocomplete="current-password" required /><button type="button" id="toggle-password" aria-label="Show password"><i class="fa-regular fa-eye"></i></button></span></label>
+          <label class="remember-row"><input type="checkbox" checked /> Keep me signed in on this device</label>
+          <button class="button button--primary full-width auth-submit" type="submit">Sign in securely <i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+        <div class="auth-divider"><span>or continue with</span></div>
+        <div class="social-login"><button type="button" data-demo-login><i class="fa-brands fa-google"></i> Google</button><button type="button" data-demo-login><i class="fa-brands fa-apple"></i> Apple</button></div>
+        <div class="demo-note"><i class="fa-solid fa-wand-magic-sparkles"></i><span><strong>Prototype access</strong>Use the prefilled details or either social button.</span></div>
+        <footer>New to Chinstrap? <button type="button" data-screen="onboarding">Create a free account</button></footer>
+      </div>
+      <p class="auth-legal">Protected by encrypted sign-in · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    </div>
+  </section>
+
+  <section class="screen" id="screen-onboarding" aria-label="Chinstrap onboarding">
+    <div class="onboarding">
+      <aside class="onboarding__aside">
+        <button class="wordmark wordmark--light reset-button" type="button" data-screen="landing"><span
+            class="wordmark__mark wordmark__mark--light"><i class="fa-solid fa-bolt" aria-hidden="true"></i></span>
+          CHIN<span>STRAP</span></button>
+        <div>
+          <h2>A useful profile starts with less.</h2>
+          <p>We ask only what is needed now. You stay in control of visibility, consent, and verification at every step.
+          </p>
+        </div>
+        <ul>
+          <li><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Privacy explained in plain language</li>
+          <li><i class="fa-solid fa-clock" aria-hidden="true"></i> Save progress and finish later</li>
+          <li><i class="fa-solid fa-check-double" aria-hidden="true"></i> Clear verification rules</li>
+        </ul>
+      </aside>
+      <main class="onboarding__main">
+        <div class="onboarding__top"><button class="button button--text" type="button" data-screen="landing"><i
+              class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to home</button>
+          <div class="progress-wrap"><span id="step-label">Step 1 of 6</span>
+            <div class="progress">
+              <div id="progress-fill"></div>
+            </div>
+          </div>
+        </div>
+        <div class="onboarding__content">
+          <section class="onboarding-step active" data-step="1">
+            <h1>How will you use Chinstrap?</h1><p>Your role shapes your tools, privacy defaults, verification, and setup.</p>
+            <div class="choice-grid choice-grid--roles"><button type="button" data-role-choice="athlete"><i class="fa-solid fa-person-running"></i><i class="fa-solid fa-circle-check selected-check"></i><strong>I’m an athlete</strong><span>Build a profile and find your best fit.</span></button><button class="selected" type="button" data-role-choice="parent"><i class="fa-solid fa-people-roof"></i><i class="fa-solid fa-circle-check selected-check"></i><strong>I’m a parent</strong><span>Support linked athletes and compare programs.</span></button><button type="button" data-role-choice="coach"><i class="fa-solid fa-clipboard-user"></i><i class="fa-solid fa-circle-check selected-check"></i><strong>I’m a coach or director</strong><span>Present work and verify affiliations.</span></button><button type="button" data-role-choice="agent"><i class="fa-solid fa-user-tie"></i><i class="fa-solid fa-circle-check selected-check"></i><strong>I’m an agent or advisor</strong><span>Support athlete and recruiting decisions.</span></button><button type="button" data-role-choice="organization"><i class="fa-solid fa-building"></i><i class="fa-solid fa-circle-check selected-check"></i><strong>I represent an organization</strong><span>Claim and manage a public profile.</span></button></div>
+          </section>
+          <section class="onboarding-step" data-step="2">
+            <h1>Build the right sports identity.</h1><p>Your legal name stays private where required. Your profile name is what the community sees.</p>
+            <div class="form-grid"><label>Full name<input value="Jamie Smith" /></label><label>Profile name<input value="@jamiesports" /></label><label>Date of birth<input type="date" value="2008-08-14" /></label><label>Location<input value="Chicago, IL" /></label><label>Primary sport<select><option>Soccer</option><option>Basketball</option><option>Track &amp; field</option><option>American football</option><option>Volleyball</option></select></label><label>Level of play<select><option>Club / travel</option><option>High school varsity</option><option>College</option><option>Recreational</option></select></label></div>
+          </section>
+          <section class="onboarding-step" data-step="3">
+            <h1>Add school, college, and team context.</h1><p>This makes discovery and AI matches useful. Prior affiliations are welcome and can be verified later.</p>
+            <div class="form-grid"><label>Academic stage<select><option>High school student</option><option>College student-athlete</option><option>Middle school</option><option>Alumni</option></select></label><label>Graduation year<select><option>2027</option><option>2028</option><option>2029</option><option>2030</option></select></label><label class="span-2">Current school or college<input value="Lincoln Park High School" /></label><label>Travel team / club<input value="Chicago City SC" /></label><label>Position / event<input value="Center midfielder" /></label></div><div class="form-callout"><i class="fa-solid fa-circle-info"></i><span><strong>Can’t find your school or team?</strong>Add it as free text now. Chinstrap can match it to an official organization later.</span></div>
+          </section>
+          <section class="onboarding-step" data-step="4">
+            <h1>Connect the people around your journey.</h1><p>Connections use consent-based invites and support verification, shared plans, and private decisions.</p>
+            <div class="connection-grid"><article><i class="fa-solid fa-people-roof"></i><span><strong>Parent or guardian</strong><small>Share saves, messages, and Family plan access.</small></span><button type="button" data-toast="Secure guardian invite prepared.">Invite</button></article><article><i class="fa-solid fa-clipboard-user"></i><span><strong>Coach or athletic director</strong><small>Confirm team affiliation and performance context.</small></span><button type="button" data-toast="Coach search opened.">Find</button></article><article><i class="fa-solid fa-building"></i><span><strong>Team or organization</strong><small>Connect your current school, club, or academy.</small></span><button type="button" data-toast="Organization search opened.">Connect</button></article></div><button class="skip-link" type="button" data-toast="You can make connections later from Network.">I’ll connect people later</button>
+          </section>
+          <section class="onboarding-step" data-step="5">
+            <h1>Choose how you want to verify.</h1><p>One strong method is enough to begin. Documents are private and never appear on a public profile.</p>
+            <div class="verification-options"><label class="selected"><input type="radio" name="verification" checked /><i class="fa-solid fa-envelope-circle-check"></i><span><strong>School or college email</strong><small>Fastest · Send a secure link to your school address.</small></span><em>Recommended</em></label><label><input type="radio" name="verification" /><i class="fa-solid fa-link"></i><span><strong>Official roster link</strong><small>Share a school, club, Hudl, or athlete profile URL.</small></span></label><label><input type="radio" name="verification" /><i class="fa-solid fa-file-shield"></i><span><strong>Upload affiliation proof</strong><small>Roster screenshot, registration, school ID, or team document.</small></span></label></div><div class="form-grid verification-input"><label class="span-2">School or college email<input type="email" value="jamie@school.edu" /></label></div>
+          </section>
+          <section class="onboarding-step" data-step="6">
+            <h1>Choose your access and privacy.</h1><p>Community is free. AI is optional and can be added later. Change these settings anytime.</p>
+            <div class="onboarding-plan-grid"><label class="selected"><input type="radio" name="plan" checked /><span><small>START FREE</small><strong>Community</strong><em>$0</em><b>Discovery, reviews, community, saved lists</b></span></label><label><input type="radio" name="plan" /><span><small>AI FOR ATHLETES</small><strong>Insight Plus</strong><em>$14.99/mo</em><b>30 credits and 12-month history</b></span></label><label><input type="radio" name="plan" /><span><small>FOR HOUSEHOLDS</small><strong>Insight Family</strong><em>$24.99/mo</em><b>75 shared credits across linked athletes</b></span></label></div><div class="preference-list compact"><div><span><strong>Personalized recommendations</strong><small>Use sport, level, and general location.</small></span><button class="switch on" type="button" aria-label="Toggle recommendations"></button></div><div><span><strong>Profile discoverability</strong><small>Let verified sports people find your public profile.</small></span><button class="switch on" type="button" aria-label="Toggle profile visibility"></button></div><div><span><strong>Community notifications</strong><small>Messages, connections, and important program updates.</small></span><button class="switch on" type="button" aria-label="Toggle notifications"></button></div></div>
+          </section>
+        </div>
+        <div class="onboarding__footer"><button class="button button--secondary" id="step-back"
+            type="button">Back</button><button class="button button--primary" id="step-next" type="button">Continue <i
+              class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div>
+      </main>
+    </div>
+  </section>
+
+  <section class="screen" id="screen-app" aria-label="Chinstrap web app">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <button class="sidebar-brand reset-button" type="button" data-screen="landing"><img src="assets/chinstrap-notch-logo-v2.png" alt="Chinstrap" /></button>
+        <nav class="sidebar-nav" aria-label="Product navigation">
+          <span class="sidebar-label">Workspace</span>
+          <button class="active" type="button" data-panel="dashboard"><i class="fa-solid fa-grid-2"></i>Home</button>
+          <button type="button" data-panel="community"><i class="fa-solid fa-bolt"></i>Community <b>Live</b></button>
+          <button type="button" data-panel="discover"><i class="fa-solid fa-magnifying-glass"></i>Discover</button>
+          <button type="button" data-panel="insight"><i class="fa-solid fa-wand-magic-sparkles"></i>Insight AI <b>12</b></button>
+          <span class="sidebar-label">My activity</span>
+          <button type="button" data-panel="network"><i class="fa-solid fa-user-group"></i>Network <b>6</b></button>
+          <button type="button" data-panel="tournaments"><i class="fa-solid fa-trophy"></i>Tournaments</button>
+          <button type="button" data-panel="saved"><i class="fa-regular fa-bookmark"></i>Saved <b>3</b></button>
+          <button type="button" data-panel="reviews"><i class="fa-regular fa-message"></i>Reviews</button>
+          <button type="button" data-panel="messages"><i class="fa-regular fa-comments"></i>Messages <b>2</b></button>
+          <span class="sidebar-label">Settings</span>
+          <button type="button" data-panel="verification"><i class="fa-solid fa-shield-check"></i>Verification</button>
+          <button type="button" data-panel="account"><i class="fa-regular fa-user"></i>Account &amp; billing</button>
+        </nav>
+        <div class="sidebar__footer">
+          <p><strong>Jamie Smith</strong><span>Community plan</span></p><button class="button button--secondary button--small" type="button" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</button>
+        </div>
+      </aside>
+      <main class="app-main">
+        <header class="app-topbar"><span><b>Thursday, October 1, 2026</b><small>Private workspace</small></span><button class="icon-button" type="button"
+            data-toast="You’re all caught up — no new alerts." aria-label="Notifications"><i class="fa-regular fa-bell"
+              aria-hidden="true"></i></button><button class="user-control reset-button" type="button"
+            data-panel="account"><span class="avatar">JS</span><span><strong>Jamie
+                Smith</strong><small>Parent</small></span><i class="fa-solid fa-chevron-down"
+              aria-hidden="true"></i></button></header>
+
+        <section class="app-panel active" id="panel-dashboard">
+          <header class="panel-heading dashboard-heading"><div><span class="panel-kicker"><i class="fa-solid fa-sun"></i> Your private workspace</span><h1>Good morning, Jamie.</h1><p>Here’s what needs attention across your family’s sports journey.</p></div><button class="button button--primary" type="button" data-panel="discover">Find a program <i class="fa-solid fa-arrow-right"></i></button></header>
+          <div class="dashboard-stats"><article><span><i class="fa-solid fa-wand-magic-sparkles"></i> Insight credits</span><strong>12</strong><small>Explorer pack · 90-day expiry</small><button type="button" data-panel="insight">Open Insight</button></article><article><span><i class="fa-solid fa-shield-check"></i> Verification</span><strong>75%</strong><small>School email needs confirmation</small><button type="button" data-panel="verification">Finish verification</button></article><article><span><i class="fa-regular fa-bookmark"></i> Shortlist</span><strong>3</strong><small>2 programs ready to compare</small><button type="button" data-panel="saved">Review shortlist</button></article><article><span><i class="fa-solid fa-user-group"></i> Network</span><strong>6</strong><small>2 new connection requests</small><button type="button" data-panel="network">View network</button></article></div>
+          <div class="dashboard-grid">
+            <section class="surface dashboard-focus"><header><div><span class="panel-kicker">Next best action</span><h2>Confirm Jamie’s school affiliation</h2></div><b>5 min</b></header><p>A confirmed school or college connection unlocks verified review eligibility and raises confidence in Insight matches.</p><div class="action-steps"><span class="done"><i class="fa-solid fa-check"></i> Identity created</span><span class="done"><i class="fa-solid fa-check"></i> Sport &amp; level added</span><span><i>3</i> Verify school email</span><span><i>4</i> Connect current team</span></div><button class="button button--primary" type="button" data-panel="verification">Continue setup</button></section>
+            <section class="surface dashboard-activity"><header><h2>Today’s signal</h2><button type="button" data-panel="community">View community</button></header><article><img src="assets/social-avatar-1.png" alt="Jordan Ellis" /><span><strong>Jordan Ellis posted a new training clip</strong><small>Northstar Academy · 18m</small></span></article><article><span class="activity-icon"><i class="fa-solid fa-star"></i></span><span><strong>Northstar received 4 new verified reviews</strong><small>Coaching sentiment increased 3%</small></span></article><article><span class="activity-icon"><i class="fa-solid fa-calendar"></i></span><span><strong>Chicago Fall ID Showcase</strong><small>Registration closes tomorrow</small></span></article></section>
+          </div>
+          <section class="surface dashboard-products"><header><div><h2>Everything in one sports workspace</h2><p>Move between research, people, AI, events, and your private account without losing context.</p></div></header><div><button type="button" data-panel="community"><i class="fa-solid fa-bolt"></i><span><strong>Community</strong><small>Posts, people, and live sports moments</small></span></button><button type="button" data-panel="insight"><i class="fa-solid fa-wand-magic-sparkles"></i><span><strong>Insight Athlete</strong><small>AI college-fit and development analysis</small></span></button><button type="button" data-panel="discover"><i class="fa-solid fa-compass"></i><span><strong>Discover</strong><small>Programs, schools, teams, and agents</small></span></button><button type="button" data-panel="tournaments"><i class="fa-solid fa-trophy"></i><span><strong>Tournaments</strong><small>Seasons, schedules, and event reviews</small></span></button></div></section>
+        </section>
+
+        <section class="app-panel" id="panel-community">
+          <header class="panel-heading community-heading">
+            <div>
+              <span class="panel-kicker"><i class="fa-solid fa-circle" aria-hidden="true"></i> Live community</span>
+              <h1>Your sports world, in motion.</h1>
+              <p>Follow verified people, share the work, and stay close to the moments that shape better decisions.</p>
+            </div>
+            <button class="button button--primary" type="button" data-composer-focus><i class="fa-solid fa-plus"
+                aria-hidden="true"></i> Share an update</button>
+          </header>
+
+          <nav class="social-tabs" aria-label="Community feed filters">
+            <button class="active" type="button" data-social-tab>Trending</button>
+            <button type="button" data-social-tab>For you</button>
+            <button type="button" data-social-tab>My sport</button>
+            <button type="button" data-social-tab>What’s new</button>
+          </nav>
+
+          <div class="community-shell">
+            <div class="community-feed">
+              <form class="surface post-composer" id="community-post-form">
+                <span class="avatar avatar--photo"><img src="assets/member-avatar.png" alt="Jamie Smith" /></span>
+                <label><span class="sr-only">Share an update</span><input id="community-post-input"
+                    placeholder="Share a win, question, clip, or update…" /></label>
+                <div class="composer-actions"><button type="button" data-toast="Photo and video picker would open here."><i
+                      class="fa-regular fa-image" aria-hidden="true"></i> Media</button><button type="button"
+                    data-toast="Tag people or programs in this update."><i class="fa-solid fa-at"
+                      aria-hidden="true"></i> Tag</button><button class="button button--primary button--small"
+                    type="submit">Post</button></div>
+              </form>
+
+              <article class="surface feed-post">
+                <header class="feed-post__header">
+                  <button class="creator reset-button" type="button" data-panel="account"><img
+                      src="assets/social-avatar-1.png" alt="Jordan Ellis" /><span><strong>Jordan Ellis <i
+                          class="fa-solid fa-circle-check verified" aria-hidden="true"></i></strong><small>Athlete ·
+                        Northstar Academy · 18m</small></span></button>
+                  <button class="icon-button" type="button" data-toast="Post options opened." aria-label="Post options"><i
+                      class="fa-solid fa-ellipsis" aria-hidden="true"></i></button>
+                </header>
+                <p class="feed-post__copy">Trust the work nobody sees. Great session with the Northstar group today.
+                  The feedback was specific, competitive, and exactly what I needed. <b>#NextLevel</b></p>
+                <div class="feed-post__media"><img src="assets/social-athlete.png" alt="Soccer athlete in action" /><span
+                    class="media-badge"><i class="fa-solid fa-futbol" aria-hidden="true"></i> My sport</span></div>
+                <div class="feed-post__meta"><button class="reset-button" type="button"
+                    data-toast="284 verified community members liked this.">284 reactions</button><button
+                    class="reset-button" type="button" data-toast="Comments opened for this prototype post.">36
+                    comments</button></div>
+                <footer class="feed-post__actions"><button type="button" data-social-like data-count="284"><i
+                      class="fa-regular fa-heart" aria-hidden="true"></i><span>Like</span></button><button type="button"
+                    data-toast="Comment thread opened."><i class="fa-regular fa-comment" aria-hidden="true"></i>
+                    Comment</button><button type="button" data-toast="Post link copied for sharing."><i
+                      class="fa-solid fa-paper-plane" aria-hidden="true"></i> Share</button><button type="button"
+                    data-save="Jordan’s training post"><i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+                    Save</button></footer>
+              </article>
+
+              <article class="surface feed-post feed-post--event">
+                <header class="feed-post__header">
+                  <button class="creator reset-button" type="button" data-panel="program"><span
+                      class="creator__brand">NL</span><span><strong>Northstar League <i
+                          class="fa-solid fa-circle-check verified" aria-hidden="true"></i></strong><small>Organization ·
+                        1h</small></span></button>
+                  <span class="tag tag--verified">Announcement</span>
+                </header>
+                <div class="event-post"><img src="assets/social-track.png" alt="Track athlete at a meet" /><div><span
+                      class="panel-kicker">Registration closes Friday</span>
+                    <h3>Fall ID showcase is now open</h3>
+                    <p>Verified programs, college scouts, live results, and post-event feedback in one weekend.</p>
+                    <button class="button button--secondary button--small" type="button"
+                      data-toast="Event detail opened.">View event details</button>
+                  </div></div>
+                <footer class="feed-post__actions"><button type="button" data-social-like data-count="91"><i
+                      class="fa-regular fa-heart" aria-hidden="true"></i><span>Like</span></button><button type="button"
+                    data-toast="Event discussion opened."><i class="fa-regular fa-comment" aria-hidden="true"></i>
+                    Discuss</button><button type="button" data-toast="Event saved to your calendar."><i
+                      class="fa-regular fa-calendar-plus" aria-hidden="true"></i> Save date</button></footer>
+              </article>
+            </div>
+
+            <aside class="community-rail">
+              <section class="surface pulse-card">
+                <header><span>My sports pulse</span><i class="fa-solid fa-chart-simple" aria-hidden="true"></i></header>
+                <strong>12 meaningful updates</strong>
+                <p>From programs and people you follow this week.</p>
+                <div><span><b>6</b> connections</span><span><b>4</b> events</span><span><b>2</b> new reviews</span></div>
+              </section>
+              <section class="surface people-card">
+                <header><h3>People worth knowing</h3><button class="reset-button" type="button"
+                    data-toast="All suggested connections opened.">See all</button></header>
+                <article><img src="assets/social-avatar-2.png" alt="Maya Chen" /><span><strong>Maya
+                      Chen</strong><small>Verified coach · Soccer</small></span><button type="button" data-follow>Follow</button></article>
+                <article><img src="assets/social-avatar-3.png" alt="Theo Brooks" /><span><strong>Theo
+                      Brooks</strong><small>Parent · 8 shared connections</small></span><button type="button"
+                    data-follow>Follow</button></article>
+              </section>
+              <section class="surface moment-card">
+                <span class="panel-kicker">Up next</span>
+                <h3>Chicago youth soccer Q&amp;A</h3>
+                <p>Tomorrow · 6:30 PM<br />Hosted by 3 verified coaches</p>
+                <button class="button button--secondary button--small full-width" type="button"
+                  data-toast="You’re on the reminder list.">Remind me</button>
+              </section>
+            </aside>
+          </div>
+        </section>
+
+        <section class="app-panel" id="panel-discover">
+          <header class="panel-heading">
+            <div>
+              <h1>Find the right program with real evidence.</h1>
+              <p>Search verified reviews, compare programs, and make a confident decision.</p>
+            </div>
+          </header>
+          <form class="app-search" id="app-search"><label><i class="fa-solid fa-magnifying-glass"
+                aria-hidden="true"></i><input value="Soccer programs in Chicago, IL"
+                aria-label="Search programs" /></label><label><i class="fa-solid fa-futbol"
+                aria-hidden="true"></i><select aria-label="Sport">
+                <option>Soccer</option>
+                <option>Basketball</option>
+              </select></label><label><i class="fa-solid fa-location-dot" aria-hidden="true"></i><select
+                aria-label="Location">
+                <option>Chicago, IL</option>
+                <option>Houston, TX</option>
+              </select></label><label><i class="fa-solid fa-building" aria-hidden="true"></i><select aria-label="Type">
+                <option>All types</option>
+                <option>Club</option>
+                <option>High school</option>
+              </select></label><button class="button button--primary" type="submit">Search</button></form>
+          <div class="filters"><button class="pill active" type="button">All (24)</button><button class="pill"
+              type="button">Clubs (12)</button><button class="pill" type="button">High schools (6)</button><button
+              class="pill" type="button">Academies (4)</button><button class="pill" type="button"><i
+                class="fa-solid fa-sliders" aria-hidden="true"></i> More filters</button><button
+              class="pill filters__sort" type="button">Sort: Best match <i class="fa-solid fa-chevron-down"
+                aria-hidden="true"></i></button></div>
+          <div class="discover-layout">
+            <div class="results" role="table" aria-label="Program results">
+              <div class="result result--head" role="row"><span>24 programs in
+                  Chicago</span><span>Rating</span><span>Reviews</span><span>Key
+                  themes</span><span>Evidence</span><span></span></div>
+              <article class="result">
+                <div class="entity"><button class="check selected" type="button" data-compare="Northstar Academy"
+                    aria-label="Remove Northstar Academy from comparison"><i class="fa-solid fa-check"
+                      aria-hidden="true"></i></button><img src="assets/northstar-school.png" alt="Northstar Academy" />
+                  <div><strong>Northstar Academy <i class="fa-solid fa-circle-check verified"
+                        aria-label="Verified"></i></strong><span>Club program</span><small><i
+                        class="fa-solid fa-location-dot" aria-hidden="true"></i> Chicago, IL</small></div>
+                </div>
+                <div class="metric"><strong>4.8 <i class="fa-solid fa-star"
+                      aria-hidden="true"></i></strong><small>Confidence: High</small></div>
+                <div class="metric"><strong>142</strong><small>verified reviews</small></div>
+                <div class="themes"><span>Player development</span><span>Positive coaching</span></div>
+                <div class="metric"><strong>28</strong><small>college commitments</small></div>
+                <div class="row-actions"><button type="button" data-save="Northstar Academy" aria-label="Save"><i
+                      class="fa-regular fa-bookmark" aria-hidden="true"></i></button><button type="button"
+                    data-panel="program" aria-label="View"><i class="fa-solid fa-chevron-right"
+                      aria-hidden="true"></i></button></div>
+              </article>
+              <article class="result">
+                <div class="entity"><button class="check selected" type="button" data-compare="Lakeside United"
+                    aria-label="Remove Lakeside United from comparison"><i class="fa-solid fa-check"
+                      aria-hidden="true"></i></button><img src="assets/soccer-stadium.jpg" alt="Lakeside United" />
+                  <div><strong>Lakeside United <i class="fa-solid fa-circle-check verified"
+                        aria-label="Verified"></i></strong><span>Club program</span><small><i
+                        class="fa-solid fa-location-dot" aria-hidden="true"></i> Evanston, IL</small></div>
+                </div>
+                <div class="metric"><strong>4.6 <i class="fa-solid fa-star"
+                      aria-hidden="true"></i></strong><small>Confidence: High</small></div>
+                <div class="metric"><strong>87</strong><small>verified reviews</small></div>
+                <div class="themes"><span>Supportive culture</span><span>College exposure</span></div>
+                <div class="metric"><strong>42</strong><small>college signings</small></div>
+                <div class="row-actions"><button class="saved" type="button" data-save="Lakeside United"
+                    aria-label="Unsave"><i class="fa-solid fa-bookmark" aria-hidden="true"></i></button><button
+                    type="button" data-panel="program" aria-label="View"><i class="fa-solid fa-chevron-right"
+                      aria-hidden="true"></i></button></div>
+              </article>
+              <article class="result">
+                <div class="entity"><button class="check" type="button" data-compare="Elevate Soccer Club"
+                    aria-label="Add Elevate Soccer Club to comparison"></button><img src="assets/track-program.png"
+                    alt="Elevate Soccer Club" />
+                  <div><strong>Elevate Soccer Club <i class="fa-solid fa-circle-check verified"
+                        aria-label="Verified"></i></strong><span>Club program</span><small><i
+                        class="fa-solid fa-location-dot" aria-hidden="true"></i> Oak Park, IL</small></div>
+                </div>
+                <div class="metric"><strong>4.3 <i class="fa-solid fa-star"
+                      aria-hidden="true"></i></strong><small>Confidence: Medium</small></div>
+                <div class="metric"><strong>64</strong><small>verified reviews</small></div>
+                <div class="themes"><span>Skilled coaching</span><span>Competitive</span></div>
+                <div class="metric"><strong>ECNL</strong><small>affiliated since 2021</small></div>
+                <div class="row-actions"><button type="button" data-save="Elevate Soccer Club" aria-label="Save"><i
+                      class="fa-regular fa-bookmark" aria-hidden="true"></i></button><button type="button"
+                    data-panel="program" aria-label="View"><i class="fa-solid fa-chevron-right"
+                      aria-hidden="true"></i></button></div>
+              </article>
+              <article class="result">
+                <div class="entity"><button class="check" type="button" data-compare="D.A.V High School"
+                    aria-label="Add D.A.V High School to comparison"></button><img src="assets/community-team.png"
+                    alt="D.A.V High School" />
+                  <div><strong>D.A.V High School <i class="fa-solid fa-circle-check verified"
+                        aria-label="Verified"></i></strong><span>High school</span><small><i
+                        class="fa-solid fa-location-dot" aria-hidden="true"></i> Chicago, IL</small></div>
+                </div>
+                <div class="metric"><strong>4.1 <i class="fa-solid fa-star"
+                      aria-hidden="true"></i></strong><small>Confidence: Medium</small></div>
+                <div class="metric"><strong>52</strong><small>verified reviews</small></div>
+                <div class="themes"><span>Strong culture</span><span>Academic balance</span></div>
+                <div class="metric"><strong>40+</strong><small>college signings</small></div>
+                <div class="row-actions"><button type="button" data-save="D.A.V High School" aria-label="Save"><i
+                      class="fa-regular fa-bookmark" aria-hidden="true"></i></button><button type="button"
+                    data-panel="program" aria-label="View"><i class="fa-solid fa-chevron-right"
+                      aria-hidden="true"></i></button></div>
+              </article>
+            </div>
+            <aside class="decision-rail">
+              <section class="surface compare-tray">
+                <h3>Compare programs <b class="compare-count">2</b></h3>
+                <div>
+                  <article><img src="assets/northstar-school.png" alt="" /><span><strong>Northstar
+                        Academy</strong><small>Club program</small></span><i class="fa-solid fa-xmark"
+                      aria-hidden="true"></i></article>
+                  <article><img src="assets/soccer-stadium.jpg" alt="" /><span><strong>Lakeside
+                        United</strong><small>Club program</small></span><i class="fa-solid fa-xmark"
+                      aria-hidden="true"></i></article>
+                </div><button class="button button--primary full-width" type="button" data-panel="compare">Compare
+                  selected <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+              </section>
+              <section class="surface method-card">
+                <h3>About these results <i class="fa-regular fa-lightbulb" aria-hidden="true"></i></h3>
+                <p>Ratings use verified reviews. Recent activity and a balanced reviewer mix increase confidence.</p>
+                <button class="link-button" type="button" data-toast="Methodology opened in the full product.">Learn how
+                  ratings work <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+              </section>
+            </aside>
+          </div>
+        </section>
+
+        <section class="app-panel" id="panel-program">
+          <button class="back-link" type="button" data-panel="discover"><i class="fa-solid fa-arrow-left"
+              aria-hidden="true"></i> Back to results</button>
+          <div class="profile-header">
+            <div class="profile-identity"><span class="profile-logo"><i class="fa-solid fa-shield-halved"
+                  aria-hidden="true"></i></span>
+              <div>
+                <h1>Northstar Academy <span class="tag tag--verified"><i class="fa-solid fa-circle-check"
+                      aria-hidden="true"></i> Verified</span></h1>
+                <p>Soccer · Chicago, IL · Club program</p>
+                <div class="rating"><strong>4.8</strong><i class="fa-solid fa-star" aria-hidden="true"></i><span>142
+                    verified reviews · High confidence</span></div>
+                <div class="profile-actions"><button class="button button--secondary" type="button"
+                    data-save="Northstar Academy"><i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+                    Save</button><button class="button button--secondary" type="button" data-modal="review"><i
+                      class="fa-regular fa-pen-to-square" aria-hidden="true"></i> Write a review</button><button
+                    class="button button--primary" type="button" data-compare="Northstar Academy"><i
+                      class="fa-solid fa-scale-balanced" aria-hidden="true"></i> Compare</button></div>
+              </div>
+            </div>
+            <div class="profile-images"><img src="assets/landing-basketball.jpg" alt="Athletes training" /><img
+                src="assets/northstar-school.png" alt="Northstar facility" /></div>
+          </div>
+          <nav class="profile-tabs" aria-label="Program sections"><button class="active"
+              type="button">Overview</button><button type="button" data-panel="reviews">Reviews (142)</button><button
+              type="button" data-toast="Program details are part of the full product.">Program details</button><button
+              type="button" data-toast="Coach profiles are part of the full product.">Coaches</button><button
+              type="button" data-toast="Outcome evidence is part of the full product.">College outcomes</button></nav>
+          <div class="profile-grid">
+            <div>
+              <section class="content-section">
+                <h2>At a glance</h2>
+                <p>Practical details to help decide whether Northstar fits your family.</p>
+                <div class="facts">
+                  <article><i class="fa-solid fa-users" aria-hidden="true"></i><span>Ages /
+                      grades</span><strong>U9–U19</strong><small>3rd–12th grade</small></article>
+                  <article><i class="fa-solid fa-building-columns" aria-hidden="true"></i><span>Program
+                      type</span><strong>Club · Nonprofit</strong><small>Year-round</small></article>
+                  <article><i class="fa-solid fa-location-dot"
+                      aria-hidden="true"></i><span>Location</span><strong>Chicago, IL</strong><small>3 training
+                      sites</small></article>
+                  <article><i class="fa-solid fa-dollar-sign" aria-hidden="true"></i><span>Annual
+                      cost</span><strong>$2,200–$3,400</strong><small>By age group</small></article>
+                  <article><i class="fa-solid fa-plane"
+                      aria-hidden="true"></i><span>Travel</span><strong>Moderate</strong><small>IL, IN, WI</small>
+                  </article>
+                  <article><i class="fa-solid fa-people-group" aria-hidden="true"></i><span>Team count</span><strong>24
+                      teams</strong><small>Boys & girls</small></article>
+                </div>
+              </section>
+              <section class="content-section">
+                <h2>Why this may be a good fit</h2>
+                <p>Based on your priorities: player development, college pathway, and positive culture.</p>
+                <div class="recommendation"><span><strong>Strong match on 3 of 3 priorities</strong><small>Evidence
+                      aligns with your preferences. Cost is slightly above your saved range.</small></span><b>89%
+                    match</b></div>
+              </section>
+              <section class="content-section">
+                <div class="content-section__head">
+                  <div>
+                    <h2>What people are saying</h2>
+                    <p>Themes from 142 verified reviews</p>
+                  </div><button class="button button--secondary button--small" type="button" data-panel="reviews">Read
+                    all reviews</button>
+                </div>
+                <div class="quote-grid">
+                  <article><strong>Player development <span>92%</span></strong>
+                    <p>“Coaches invest in each player’s growth. My son is more confident.”</p><small>Parent · Verified
+                      relationship</small>
+                  </article>
+                  <article><strong>Positive culture <span>89%</span></strong>
+                    <p>“Competitive but healthy. It feels like a second family.”</p><small>Athlete · Verified
+                      relationship</small>
+                  </article>
+                  <article><strong>Well organized <span>85%</span></strong>
+                    <p>“Communication is clear and travel is reasonable.”</p><small>Alumni · Verified
+                      relationship</small>
+                  </article>
+                </div>
+              </section>
+            </div>
+            <aside class="surface trust-panel">
+              <div class="trust-panel__head"><span><strong>Program trust score</strong><b>4.8<small> /
+                      5</small></b><span class="rating-stars"><i class="fa-solid fa-star"></i><i
+                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                      class="fa-solid fa-star-half-stroke"></i></span></span><em><i class="fa-solid fa-signal"
+                    aria-hidden="true"></i> High confidence</em></div>
+              <div class="score-list">
+                <div><span>Coaching quality</span><i><b style="width:96%"></b></i><strong>4.8</strong></div>
+                <div><span>Player development</span><i><b style="width:94%"></b></i><strong>4.7</strong></div>
+                <div><span>Organization</span><i><b style="width:92%"></b></i><strong>4.6</strong></div>
+                <div><span>Communication</span><i><b style="width:90%"></b></i><strong>4.5</strong></div>
+                <div><span>Value for cost</span><i><b style="width:84%"></b></i><strong>4.2</strong></div>
+              </div>
+              <div class="info-note"><strong>Why confidence is high</strong><br />Recent reviews, verified
+                relationships, and a balanced mix of perspectives.</div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="app-panel" id="panel-insight">
+          <header class="panel-heading insight-heading"><div><span class="panel-kicker"><i class="fa-solid fa-wand-magic-sparkles"></i> Insight Athlete A.I.</span><h1>See the fit. Know the next move.</h1><p>Explainable college matches and development priorities based on verified athlete data.</p></div><div class="credit-balance"><span>AVAILABLE CREDITS</span><strong>12</strong><small>Explorer Pack · expires Dec 30</small></div></header>
+          <div class="insight-toolbar surface"><label>Athlete<select><option>Jordan Smith · Soccer</option></select></label><label>Analysis goal<select><option>College fit &amp; recruiting</option><option>Development priorities</option><option>Roster comparison</option></select></label><button class="button button--primary" type="button" data-toast="New AI analysis queued. One credit would be used."><i class="fa-solid fa-sparkles"></i> Recompute analysis</button></div>
+          <div class="insight-app-grid">
+            <section class="surface readiness-card"><header><span><small>COLLEGE FIT READINESS</small><strong>87</strong></span><em>High confidence</em></header><div class="readiness-ring"><span><b>87</b><small>/ 100</small></span></div><p>Jordan is competitive for regional D2 and D3 programs. Verified speed data would improve projection confidence.</p><div class="signal-bars"><div><span>Athletic profile</span><i><b style="width:92%"></b></i><strong>92</strong></div><div><span>Academic profile</span><i><b style="width:84%"></b></i><strong>84</strong></div><div><span>Roster opportunity</span><i><b style="width:76%"></b></i><strong>76</strong></div></div></section>
+            <section class="surface ai-priorities"><header><div><small>AI RECOMMENDATIONS</small><h2>Highest-impact actions</h2></div><span>Next 30 days</span></header><article><b>01</b><span><strong>Add verified performance metrics</strong><small>40-yard, sprint, and endurance benchmarks could improve match accuracy at 14 schools.</small></span><em>High impact</em></article><article><b>02</b><span><strong>Expand the academic range</strong><small>Adding GPA and intended study area reveals 9 additional strong-fit programs.</small></span><em>High impact</em></article><article><b>03</b><span><strong>Review roster opportunity</strong><small>Six saved programs graduate midfield depth in Jordan’s entry year.</small></span><em>Explore</em></article></section>
+          </div>
+          <section class="surface match-table"><header><div><h2>Recommended college matches</h2><p>Ranked by athletic, academic, roster, and preference fit.</p></div><button class="button button--secondary button--small" type="button" data-toast="Full 24-program match report opened.">View all 24</button></header><div class="match-row match-row--head"><span>Program</span><span>Overall fit</span><span>Athletic</span><span>Academic</span><span>Opportunity</span><span></span></div><div class="match-row"><span><b>01</b><strong>Northstar College</strong><small>Chicago, IL · D2</small></span><em>91%</em><strong>94</strong><strong>88</strong><strong>90</strong><button type="button" data-panel="program"><i class="fa-solid fa-arrow-right"></i></button></div><div class="match-row"><span><b>02</b><strong>Lakeside University</strong><small>Evanston, IL · D3</small></span><em>86%</em><strong>88</strong><strong>91</strong><strong>79</strong><button type="button" data-panel="program"><i class="fa-solid fa-arrow-right"></i></button></div><div class="match-row"><span><b>03</b><strong>Metro State</strong><small>Milwaukee, WI · D2</small></span><em>82%</em><strong>86</strong><strong>78</strong><strong>84</strong><button type="button" data-panel="program"><i class="fa-solid fa-arrow-right"></i></button></div></section>
+          <section class="insight-plans"><header><div><p class="eyebrow">Credits &amp; subscriptions</p><h2>Choose what fits the season.</h2></div><button class="button button--text" type="button" data-toast="Subscription and purchase history opened.">Purchase history <i class="fa-solid fa-arrow-right"></i></button></header><div class="plan-tabs"><span>ONE-TIME PACKS</span><article><strong>Trial Pack</strong><b>$4.99</b><small>3 credits · 90 days</small><button type="button" data-toast="Trial Pack checkout preview opened.">Buy pack</button></article><article class="featured"><em>BEST VALUE</em><strong>Explorer Pack</strong><b>$12.99</b><small>10 credits · 90 days</small><button type="button" data-toast="Explorer Pack checkout preview opened.">Buy pack</button></article><article><strong>Recruiting Pack</strong><b>$24.99</b><small>25 credits · 90 days</small><button type="button" data-toast="Recruiting Pack checkout preview opened.">Buy pack</button></article></div><div class="plan-tabs"><span>MONTHLY PLANS</span><article class="featured"><em>POPULAR</em><strong>Insight Plus</strong><b>$14.99<small>/mo</small></b><small>30 monthly credits · 12-month history</small><button type="button" data-toast="Insight Plus checkout preview opened.">Subscribe</button></article><article><strong>Insight Family</strong><b>$24.99<small>/mo</small></b><small>75 credits · share with linked athletes</small><button type="button" data-toast="Insight Family checkout preview opened.">Subscribe</button></article></div></section>
+        </section>
+
+        <section class="app-panel" id="panel-network">
+          <header class="panel-heading"><div><h1>Your sports network.</h1><p>Manage family, coaches, athletes, advisors, and organization connections with clear consent.</p></div><button class="button button--primary" type="button" data-toast="Connection search opened."><i class="fa-solid fa-user-plus"></i> Add connection</button></header>
+          <div class="network-summary"><article><span><i class="fa-solid fa-people-roof"></i></span><strong>1</strong><small>Family connection</small></article><article><span><i class="fa-solid fa-clipboard-user"></i></span><strong>2</strong><small>Coaches</small></article><article><span><i class="fa-solid fa-building"></i></span><strong>2</strong><small>Organizations</small></article><article><span><i class="fa-solid fa-envelope"></i></span><strong>2</strong><small>Pending invites</small></article></div>
+          <div class="network-grid"><section class="surface connection-list"><header><h2>Active connections</h2><button type="button" data-toast="Network filters opened."><i class="fa-solid fa-sliders"></i> Filter</button></header><article><img src="assets/social-avatar-1.png" alt="Jordan Smith" /><span><strong>Jordan Smith <i class="fa-solid fa-circle-check verified"></i></strong><small>Linked athlete · Soccer · School verified</small></span><em>Family</em><button type="button" data-toast="Connection details opened."><i class="fa-solid fa-ellipsis"></i></button></article><article><img src="assets/social-avatar-2.png" alt="Maya Chen" /><span><strong>Maya Chen <i class="fa-solid fa-circle-check verified"></i></strong><small>Coach · Chicago City SC</small></span><em>Coach</em><button type="button" data-toast="Connection details opened."><i class="fa-solid fa-ellipsis"></i></button></article><article><span class="org-avatar">LP</span><span><strong>Lincoln Park High School <i class="fa-solid fa-circle-check verified"></i></strong><small>Current school · Soccer program</small></span><em>School</em><button type="button" data-toast="Connection details opened."><i class="fa-solid fa-ellipsis"></i></button></article></section><aside class="surface invite-card"><span class="panel-kicker">Pending invitation</span><h2>Alex Smith</h2><p>Parent / guardian connection sent Sep 29. The invite expires in 4 days.</p><button class="button button--primary full-width" type="button" data-toast="Invitation resent.">Resend invitation</button><button class="button button--text full-width" type="button" data-toast="Invitation canceled.">Cancel invitation</button><hr /><h3>Connection privacy</h3><p>Each connection controls what can be shared. Private messages and documents are never automatically exposed.</p></aside></div>
+        </section>
+
+        <section class="app-panel" id="panel-tournaments">
+          <header class="panel-heading"><div><h1>Tournaments &amp; seasons.</h1><p>Follow events, organize seasons, and review tournament experiences with context.</p></div><button class="button button--primary" type="button" data-toast="Tournament discovery opened."><i class="fa-solid fa-plus"></i> Find tournaments</button></header>
+          <div class="tournament-hero"><div><span class="tag tag--verified">NEXT EVENT</span><h2>Chicago Fall ID Showcase</h2><p>October 18–20 · Lakeshore Athletic Complex</p><div><span><i class="fa-solid fa-location-dot"></i> Chicago, IL</span><span><i class="fa-solid fa-users"></i> 42 programs</span><span><i class="fa-solid fa-eye"></i> 18 scouts</span></div><button class="button button--lime" type="button" data-toast="Event schedule opened.">View event schedule</button></div><img src="assets/social-track.png" alt="Athletes competing at a tournament" /></div>
+          <div class="tournament-grid"><section class="surface"><header><h2>My events</h2><button type="button" data-toast="Calendar view opened.">Calendar</button></header><article><time><b>18</b>OCT</time><span><strong>Chicago Fall ID Showcase</strong><small>Registered · U18 soccer · 3-day event</small></span><em class="status-green">Confirmed</em></article><article><time><b>02</b>NOV</time><span><strong>Midwest College Combine</strong><small>Saved · Registration closes Oct 12</small></span><em>Saved</em></article><article><time><b>16</b>NOV</time><span><strong>Lakefront Invitational</strong><small>Following · Schedule pending</small></span><em>Following</em></article></section><aside class="surface tournament-reviews"><span class="panel-kicker">EVENT REPUTATION</span><strong>4.6 <i class="fa-solid fa-star"></i></strong><h3>Chicago Fall ID Showcase</h3><p>82 verified athlete, parent, coach, and program reviews.</p><div><span>Organization</span><b>4.8</b></div><div><span>Scout access</span><b>4.6</b></div><div><span>Value</span><b>4.3</b></div><button class="button button--secondary full-width" type="button" data-toast="Tournament reviews opened.">Read event reviews</button></aside></div>
+        </section>
+
+        <section class="app-panel" id="panel-saved">
+          <header class="panel-heading">
+            <div>
+              <h1>Saved for later.</h1>
+              <p>Keep promising programs together and return when you’re ready.</p>
+            </div><button class="button button--primary" type="button" data-panel="discover">Discover more</button>
+          </header>
+          <div class="saved-layout">
+            <div class="surface saved-list">
+              <article><img src="assets/soccer-stadium.jpg" alt="Lakeside United" /><span><strong>Lakeside United <i
+                      class="fa-solid fa-circle-check verified"></i></strong><small>Club soccer · Evanston, IL · 4.6
+                    from 87 reviews</small></span>
+                <div><button class="button button--secondary button--small" type="button"
+                    data-compare="Lakeside United">Compare</button><button class="button button--text button--small"
+                    type="button" data-panel="program">View</button></div>
+              </article>
+              <article><img src="assets/track-program.png" alt="Elevate Soccer Club" /><span><strong>Elevate Soccer Club
+                    <i class="fa-solid fa-circle-check verified"></i></strong><small>Club soccer · Oak Park, IL · 4.3
+                    from 64 reviews</small></span>
+                <div><button class="button button--secondary button--small" type="button"
+                    data-compare="Elevate Soccer Club">Compare</button><button class="button button--text button--small"
+                    type="button" data-panel="program">View</button></div>
+              </article>
+              <article><img src="assets/community-team.png" alt="D.A.V High School" /><span><strong>D.A.V High School <i
+                      class="fa-solid fa-circle-check verified"></i></strong><small>High school · Chicago, IL · 4.1 from
+                    52 reviews</small></span>
+                <div><button class="button button--secondary button--small" type="button"
+                    data-compare="D.A.V High School">Compare</button><button class="button button--text button--small"
+                    type="button" data-panel="program">View</button></div>
+              </article>
+            </div>
+            <aside class="surface checklist">
+              <h3>Your decision checklist</h3>
+              <p>Compare at least two programs, review cost and travel, read positive and critical themes, then contact
+                the program.</p><button class="button button--primary full-width" type="button"
+                data-panel="compare">Compare saved programs</button>
+            </aside>
+          </div>
+        </section>
+
+        <section class="app-panel" id="panel-compare">
+          <header class="panel-heading">
+            <div>
+              <h1>Compare programs.</h1>
+              <p>See the practical differences and evidence behind each rating.</p>
+            </div><button class="button button--secondary" type="button" data-panel="discover"><i
+                class="fa-solid fa-plus"></i> Add another</button>
+          </header>
+          <div class="recommendation"><span><strong>Northstar is your strongest overall match</strong><small>It leads on
+                development and college pathway. Lakeside offers lower travel and cost.</small></span><button
+              class="button button--primary button--small" type="button" data-panel="program">Open
+              recommendation</button></div>
+          <div class="surface comparison">
+            <div class="comparison__grid">
+              <div class="label program-cell">Program</div>
+              <div class="program-cell"><img src="assets/northstar-school.png" alt="" /><strong>Northstar
+                  Academy</strong><small>Chicago · Club</small></div>
+              <div class="program-cell"><img src="assets/soccer-stadium.jpg" alt="" /><strong>Lakeside
+                  United</strong><small>Evanston · Club</small></div>
+              <div class="program-cell"><img src="assets/track-program.png" alt="" /><strong>Elevate
+                  Soccer</strong><small>Oak Park · Club</small></div>
+              <div class="label">Rating</div>
+              <div><strong>4.8 · High confidence</strong></div>
+              <div>4.6 · High confidence</div>
+              <div>4.3 · Medium confidence</div>
+              <div class="label">Annual cost</div>
+              <div>$2,200–$3,400</div>
+              <div><strong>$1,900–$2,800</strong></div>
+              <div>$2,600–$3,900</div>
+              <div class="label">Travel</div>
+              <div>Moderate · Regional</div>
+              <div><strong>Low · Local</strong></div>
+              <div>High · Multi-state</div>
+              <div class="label">Top themes</div>
+              <div>Development<br />Positive coaching</div>
+              <div>Culture<br />Communication</div>
+              <div>Competition<br />Exposure</div>
+              <div class="label">Your match</div>
+              <div><span class="tag tag--verified">89% match</span></div>
+              <div><span class="tag">82% match</span></div>
+              <div><span class="tag">74% match</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="app-panel" id="panel-reviews">
+          <header class="panel-heading">
+            <div>
+              <h1>Verified reviews.</h1>
+              <p>Every published review shows relationship and verification context.</p>
+            </div><button class="button button--primary" type="button" data-modal="review"><i
+                class="fa-regular fa-pen-to-square"></i> Write a review</button>
+          </header>
+          <div class="reviews-layout">
+            <aside class="surface review-summary"><span class="tag tag--verified">High confidence</span><b>4.8</b>
+              <div class="rating-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star-half-stroke"></i></div>
+              <p>Based on 142 verified reviews</p>
+              <div class="distribution">
+                <div><span>5 star</span><i><b style="width:68%"></b></i><strong>68%</strong></div>
+                <div><span>4 star</span><i><b style="width:21%"></b></i><strong>21%</strong></div>
+                <div><span>3 star</span><i><b style="width:8%"></b></i><strong>8%</strong></div>
+                <div><span>2 star</span><i><b style="width:2%"></b></i><strong>2%</strong></div>
+              </div>
+              <div class="info-note">Reviews are moderated for authenticity and safety. Ratings are never changed by
+                programs.</div>
+            </aside>
+            <div>
+              <div class="review-filters"><button class="pill active" type="button">Most relevant</button><button
+                  class="pill" type="button">Parents</button><button class="pill" type="button">Athletes</button><button
+                  class="pill" type="button">Critical</button></div>
+              <div class="surface review-list">
+                <article>
+                  <div class="reviewer"><span class="mini-avatar"><i
+                        class="fa-solid fa-user"></i></span><strong>Parent</strong><small>U16 soccer · Sep 18</small>
+                  </div>
+                  <div>
+                    <div class="rating"><strong>5.0</strong><i class="fa-solid fa-star"></i></div>
+                    <h3>Clear development plan and excellent feedback</h3>
+                    <p>The coaching team explained where my son was progressing and where he needed work. Communication
+                      stayed consistent.</p>
+                    <footer><span class="tag tag--verified">Verified relationship</span><span>Helpful to 18
+                        families</span></footer>
+                  </div>
+                </article>
+                <article>
+                  <div class="reviewer"><span class="mini-avatar"><i
+                        class="fa-solid fa-user"></i></span><strong>Athlete</strong><small>U17 soccer · Aug 29</small>
+                  </div>
+                  <div>
+                    <div class="rating"><strong>4.0</strong><i class="fa-solid fa-star"></i></div>
+                    <h3>Strong training; schedule changes need improvement</h3>
+                    <p>Training is challenging and coaches care about growth. The main downside was late schedule
+                      changes.</p>
+                    <footer><span class="tag tag--verified">Verified relationship</span><span>Program responded</span>
+                    </footer>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="app-panel" id="panel-messages">
+          <header class="panel-heading">
+            <div>
+              <h1>Messages.</h1>
+              <p>Keep program questions and family decisions in context.</p>
+            </div>
+          </header>
+          <div class="surface messages-shell">
+            <aside class="threads">
+              <h3>Recent conversations</h3><button class="active" type="button"><span
+                  class="thread-avatar">NA</span><span><strong>Northstar Admissions</strong><small>Yes, families can
+                    attend the Oct 8 session…</small></span></button><button type="button"><span
+                  class="thread-avatar">LU</span><span><strong>Lakeside United</strong><small>Tryout registration opens
+                    Friday.</small></span></button><button type="button"><span
+                  class="thread-avatar">AS</span><span><strong>Alex Smith</strong><small>I saved the comparison for
+                    us.</small></span></button>
+            </aside>
+            <div class="conversation">
+              <header><span class="thread-avatar">NA</span><span><strong>Northstar Admissions</strong><small>Verified
+                    organization · Replies within one day</small></span></header>
+              <div class="message-list">
+                <p>Hi Jamie—thanks for your interest in our U14 program. What would you like to know?</p>
+                <p class="mine">Can families observe a training session before tryouts?</p>
+                <p>Yes, families can attend the October 8 open session. I’ve attached the visitor details.</p>
+              </div>
+              <form id="message-form"><input aria-label="Type a message" placeholder="Ask a question…" /><button
+                  class="button button--primary" type="submit" aria-label="Send"><i
+                    class="fa-solid fa-paper-plane"></i></button></form>
+            </div>
+          </div>
+        </section>
+
+        <section class="app-panel" id="panel-verification">
+          <header class="panel-heading"><div><span class="panel-kicker"><i class="fa-solid fa-shield-check"></i> Trust &amp; safety</span><h1>Verification center.</h1><p>Prove identity and sports affiliations through the method that works for you.</p></div><span class="verification-status"><i class="fa-solid fa-clock"></i><b>In progress</b><small>3 of 4 complete</small></span></header>
+          <div class="verification-layout">
+            <section class="surface verification-progress"><div class="verification-meter"><span><b>75%</b><small>PROFILE TRUST</small></span></div><h2>One step from fully verified</h2><p>Complete school or college verification to unlock review eligibility and higher-confidence AI matches.</p><div class="verification-timeline"><article class="complete"><i class="fa-solid fa-check"></i><span><strong>Email identity</strong><small>jamie.smith@example.com</small></span><em>Verified</em></article><article class="complete"><i class="fa-solid fa-check"></i><span><strong>Role &amp; age</strong><small>Athlete · Date of birth confirmed</small></span><em>Verified</em></article><article class="complete"><i class="fa-solid fa-check"></i><span><strong>Sports profile</strong><small>Soccer · Club / travel level</small></span><em>Verified</em></article><article class="current"><i>4</i><span><strong>School or college affiliation</strong><small>Choose one secure method</small></span><em>Action needed</em></article></div></section>
+            <section class="surface verification-methods"><header><div><h2>Verify your affiliation</h2><p>Only one method is required. Private evidence is encrypted and never published.</p></div><i class="fa-solid fa-lock"></i></header><div class="method-tabs"><button class="active" type="button" data-verification-method="email">School email</button><button type="button" data-verification-method="roster">Roster link</button><button type="button" data-verification-method="upload">Upload proof</button></div><div class="verification-method active" data-verification-content="email"><label>School or college email<input type="email" value="jamie@school.edu" /></label><p><i class="fa-solid fa-circle-info"></i> We’ll send a secure confirmation link. Your address is never shown publicly.</p><button class="button button--primary" type="button" data-toast="Verification email sent to jamie@school.edu.">Send verification email</button></div><div class="verification-method" data-verification-content="roster"><label>Official roster or athlete profile URL<input type="url" placeholder="https://school.org/athletics/roster" /></label><p><i class="fa-solid fa-circle-info"></i> A school, team, Hudl, or official athlete page is accepted.</p><button class="button button--primary" type="button" data-toast="Roster link submitted for review.">Submit roster link</button></div><div class="verification-method" data-verification-content="upload"><label class="upload-zone"><i class="fa-solid fa-cloud-arrow-up"></i><strong>Drop proof here or browse</strong><small>Roster screenshot, school ID, or registration · PNG, JPG, PDF</small><input type="file" /></label><button class="button button--primary" type="button" data-toast="Private proof submitted for review.">Submit private proof</button></div><footer><i class="fa-solid fa-shield-halved"></i><span><strong>How Chinstrap protects your proof</strong><small>Documents are access-controlled, excluded from public profiles, and retained only as needed for verification.</small></span></footer></section>
+          </div>
+          <section class="surface badge-guide"><header><h2>What your badges communicate</h2><p>Each badge has one clear meaning—verification is never all-or-nothing.</p></header><div><article><i class="fa-solid fa-user-check"></i><span><strong>Identity verified</strong><small>The account belongs to a real person.</small></span></article><article><i class="fa-solid fa-graduation-cap"></i><span><strong>School verified</strong><small>An academic affiliation is confirmed.</small></span></article><article><i class="fa-solid fa-futbol"></i><span><strong>Sports verified</strong><small>A roster, profile, or proof was reviewed.</small></span></article><article><i class="fa-solid fa-pen-to-square"></i><span><strong>Review eligible</strong><small>The relationship supports a verified review.</small></span></article></div></section>
+        </section>
+
+        <section class="app-panel" id="panel-account">
+          <header class="panel-heading">
+            <div>
+              <h1>Your account.</h1>
+              <p>Complete high-value setup steps at your own pace.</p>
+            </div><div class="button-row"><button class="button button--secondary" type="button" data-toast="Profile changes saved in this prototype.">Save changes</button><button class="button button--danger" type="button" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</button></div>
+          </header>
+          <div class="account-layout">
+            <div>
+              <section class="surface account-card"><img src="assets/member-avatar.png" alt="Jamie Smith" /><span>
+                  <h2>Jamie Smith</h2>
+                  <p>Parent · Chicago, IL · Email verified</p>
+                </span></section>
+              <section class="surface setup-list">
+                <article><i class="fa-solid fa-check"></i><span><strong>Verify email</strong><small>Protect your account
+                      and unlock family linking.</small></span><b>Complete</b></article>
+                <article><i class="fa-solid fa-check"></i><span><strong>Set discovery preferences</strong><small>3
+                      priorities and 1 sport selected.</small></span><b>Complete</b></article>
+                <article class="pending"><i class="fa-solid fa-link"></i><span><strong>Link an
+                      athlete</strong><small>Use a consent-based invite to connect family
+                      accounts.</small></span><button class="button button--secondary button--small" type="button"
+                    data-toast="Secure athlete invitation created.">Start</button></article>
+                <article class="pending"><i class="fa-solid fa-shield"></i><span><strong>Finish school verification</strong><small>Unlock verified reviews and improve AI confidence.</small></span><button class="button button--secondary button--small" type="button" data-panel="verification">Finish</button></article>
+              </section>
+              <section class="surface account-billing"><header><div><h3>Plan &amp; billing</h3><p>Community is active. AI credits are billed separately.</p></div><span class="tag tag--verified">Community · Free</span></header><div><span><strong>Explorer Pack</strong><small>12 Insight credits remaining · expires Dec 30, 2026</small></span><button class="button button--secondary button--small" type="button" data-panel="insight">Manage AI access</button></div></section>
+            </div>
+            <aside class="surface completion">
+              <div>78%</div>
+              <h3>Profile setup</h3>
+              <p>You have everything needed to discover and compare. Link an athlete only when ready.</p><button
+                class="button button--primary full-width" type="button" data-panel="discover">Continue
+                discovery</button>
+            </aside>
+          </div>
+        </section>
+
+        <nav class="mobile-nav" aria-label="Mobile navigation"><button class="active" type="button" data-panel="dashboard"><i class="fa-solid fa-house"></i><span>Home</span></button><button type="button" data-panel="community"><i class="fa-solid fa-bolt"></i><span>Community</span></button><button type="button" data-panel="discover"><i class="fa-solid fa-compass"></i><span>Discover</span></button><button type="button" data-panel="insight"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Insight</span></button><button type="button" data-panel="account"><i class="fa-regular fa-user"></i><span>Account</span></button></nav>
+      </main>
+    </div>
+  </section>
+
+  <div class="modal-wrap" id="review-modal" role="dialog" aria-modal="true" aria-labelledby="review-title">
+    <div class="modal">
+      <header>
+        <div>
+          <h2 id="review-title">Review Northstar Academy</h2>
+          <p>Your identity stays private; your relationship label may be shown.</p>
+        </div><button class="icon-button" type="button" data-modal-close aria-label="Close"><i
+            class="fa-solid fa-xmark"></i></button>
+      </header>
+      <div class="eligibility"><i class="fa-solid fa-shield-halved"></i><span><strong>Eligibility check:</strong> We
+          verify your family’s relationship before publication. Drafts save automatically in the full product.</span>
+      </div><label class="form-label">Overall experience</label>
+      <div class="rating-picker" role="radiogroup" aria-label="Rating"><button type="button" data-rating="1"
+          aria-label="1 star"><i class="fa-solid fa-star"></i></button><button type="button" data-rating="2"
+          aria-label="2 stars"><i class="fa-solid fa-star"></i></button><button type="button" data-rating="3"
+          aria-label="3 stars"><i class="fa-solid fa-star"></i></button><button type="button" data-rating="4"
+          aria-label="4 stars"><i class="fa-solid fa-star"></i></button><button type="button" data-rating="5"
+          aria-label="5 stars"><i class="fa-solid fa-star"></i></button></div>
+      <div class="form-grid"><label>Relationship<select>
+            <option>Parent / guardian</option>
+            <option>Athlete</option>
+            <option>Alumni</option>
+          </select></label><label>Season<select>
+            <option>2025–26</option>
+            <option>2024–25</option>
+          </select></label><label class="span-2">Review title<input
+            placeholder="Summarize your experience" /></label><label class="span-2">What should another family
+          know?<textarea rows="5"
+            placeholder="Share specific details about coaching, communication, culture, cost, or development."></textarea></label>
+      </div>
+      <footer><button class="button button--secondary" type="button" data-modal-close>Save draft</button><button
+          class="button button--primary" id="review-submit" type="button">Continue to verification</button></footer>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"><i class="fa-solid fa-circle-check"
+      aria-hidden="true"></i><span id="toast-message">Saved</span></div>
+  <script type="module" src="prototype.js"></script>
+</body>
+
+</html>
