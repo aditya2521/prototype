@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Chinstrap sports decision platform prototype" />
   <title>Chinstrap — Better sports decisions</title>
+  <link rel="icon" href="assets/chinstrap-notch-logo-v2.png" />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,16 +19,16 @@
       <div class="site-header__inner">
         <nav class="site-nav site-nav--left" aria-label="Primary navigation">
           <button class="nav-pill active" type="button" data-scroll="screen-landing">Home</button>
-          <a href="#trust-preview">Reviews</a>
-          <a href="#discover-preview">Schools &amp; organizations</a>
+          <button class="nav-pill" type="button" data-scroll="community-preview">Community</button>
+          <button class="nav-pill" type="button" data-scroll="top-rated-preview">Explore</button>
         </nav>
         <button class="site-brand reset-button" type="button" data-screen="landing" aria-label="Chinstrap home">
           <img src="assets/chinstrap-notch-logo-v2.png" alt="Chinstrap" />
         </button>
         <nav class="site-nav site-nav--right" aria-label="Secondary navigation">
-          <a href="#community-preview">Community</a>
-          <a href="#pricing-preview">Pricing</a>
-          <a href="#site-contact">Contact</a>
+          <button class="nav-pill" type="button" data-scroll="how">How it works</button>
+          <button class="nav-pill" type="button" data-scroll="insight-preview">Insight AI</button>
+          <button class="nav-pill" type="button" data-scroll="pricing-preview">Pricing</button>
           <button class="button button--text" type="button" data-screen="login">Sign in</button>
           <button class="button button--primary" type="button" data-screen="onboarding">Join free</button>
         </nav>
@@ -170,6 +171,28 @@
             </article>
           </div>
         </div>
+      </section>
+
+      <section class="section decision-playground" id="top-rated-preview">
+        <div class="container">
+          <header class="playground-heading"><div><p class="eyebrow">Choose your starting point</p><h2>Every sports journey begins with a different question.</h2></div><p>Explore Chinstrap by the decision you need to make—not by a long list of directories.</p></header>
+          <div class="playground-stage">
+            <button class="playground-feature" type="button" data-panel="discover"><img src="assets/editorial-school.jpg" alt="Athletes training together in a basketball gym" /><span class="playground-feature__shade"></span><span class="playground-feature__copy"><small>01 · FIND MY FIT</small><strong>Where could I thrive?</strong><em>Compare programs across development, culture, cost, travel, and verified outcomes.</em><b>Explore 2,800+ programs <i class="fa-solid fa-arrow-right"></i></b></span></button>
+            <div class="playground-paths"><button type="button" data-panel="tournaments"><span class="path-number">02</span><span><small>Plan the season</small><strong>Which events are worth the trip?</strong></span><i class="fa-solid fa-arrow-up-right"></i></button><button type="button" data-panel="network"><span class="path-number">03</span><span><small>Build my circle</small><strong>Who should be on my team?</strong></span><i class="fa-solid fa-arrow-up-right"></i></button><button type="button" data-panel="reviews"><span class="path-number">04</span><span><small>Hear the truth</small><strong>What did real families experience?</strong></span><i class="fa-solid fa-arrow-up-right"></i></button><button class="path-ai" type="button" data-panel="insight"><span class="path-number"><i class="fa-solid fa-wand-magic-sparkles"></i></span><span><small>Insight Athlete AI</small><strong>What should I do next?</strong></span><i class="fa-solid fa-arrow-up-right"></i></button></div>
+            <span class="playground-orbit playground-orbit--one"><b>4.8</b> verified rating</span><span class="playground-orbit playground-orbit--two"><i class="fa-solid fa-shield-check"></i> evidence first</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section signal-wall">
+        <div class="container signal-wall__shell">
+          <div class="signal-wall__media"><img src="assets/community-athlete.png" alt="Athletes celebrating as a team" /><span><i class="fa-solid fa-circle"></i> LIVE FROM THE COMMUNITY</span><button type="button" data-panel="community" aria-label="Open the Chinstrap community"><i class="fa-solid fa-play"></i></button></div>
+          <div class="signal-wall__content"><p class="eyebrow eyebrow--light">The signal wall</p><h2>What the sports world is saying—right now.</h2><p>Verified voices, current moments, and useful context come together in a community built for better decisions.</p><div class="signal-quotes"><article><header><img src="assets/social-avatar-1.png" alt="Jordan Ellis" /><span><strong>Jordan Ellis <i class="fa-solid fa-circle-check"></i></strong><small>Verified athlete · Soccer</small></span><em>18m</em></header><p>“The coaching feedback was specific enough to change my next session.”</p><footer><span><i class="fa-solid fa-heart"></i> 284</span><span>36 replies</span></footer></article><article><header><img src="assets/social-avatar-2.png" alt="Maya Chen" /><span><strong>Maya Chen <i class="fa-solid fa-circle-check"></i></strong><small>Verified coach</small></span><em>1h</em></header><p>“Three questions every family should ask before joining a travel program.”</p><footer><span><i class="fa-solid fa-bookmark"></i> 91 saves</span><span>Coach perspective</span></footer></article></div><div class="signal-wall__footer"><span><b>12.4K+</b> verified voices</span><span><b>2.8K+</b> programs discussed</span><button class="button button--lime" type="button" data-panel="community">Enter the community</button></div></div>
+        </div>
+      </section>
+
+      <section class="section match-lab">
+        <div class="container"><header class="match-lab__heading"><div><p class="eyebrow">A smarter way to shortlist</p><h2>Turn your priorities into a real match.</h2></div><p>Insight AI combines your goals with verified program evidence—then explains every recommendation.</p></header><div class="match-lab__console"><aside><span>BUILD YOUR MATCH</span><h3>What matters most?</h3><button class="active" type="button"><i class="fa-solid fa-chart-line"></i><span><strong>Player development</strong><small>High priority</small></span><b>01</b></button><button type="button"><i class="fa-solid fa-graduation-cap"></i><span><strong>Academic fit</strong><small>High priority</small></span><b>02</b></button><button type="button"><i class="fa-solid fa-location-dot"></i><span><strong>Distance &amp; travel</strong><small>Medium priority</small></span><b>03</b></button><button type="button"><i class="fa-solid fa-dollar-sign"></i><span><strong>Total cost</strong><small>Within your budget</small></span><b>04</b></button><button class="button button--primary" type="button" data-panel="insight">Refine with Insight AI</button></aside><div class="match-deck"><header><span><i class="fa-solid fa-wand-magic-sparkles"></i> YOUR EXPLAINABLE MATCHES</span><b>Updated today</b></header><button class="match-card match-card--first" type="button" data-panel="program"><span class="match-rank">01</span><img src="assets/northstar-school.png" alt="Northstar Academy" /><span><small>91% FIT · VERIFIED</small><strong>Northstar Academy</strong><em>Soccer · Chicago · 142 reviews</em><i>Best for development</i></span><b>4.8 <i class="fa-solid fa-star"></i></b></button><button class="match-card" type="button" data-panel="program"><span class="match-rank">02</span><img src="assets/soccer-stadium.jpg" alt="Lakeside FC" /><span><small>86% FIT · VERIFIED</small><strong>Lakeside FC</strong><em>Soccer · 3.2 mi · 96 reviews</em><i>Best for location</i></span><b>4.7 <i class="fa-solid fa-star"></i></b></button><button class="match-card" type="button" data-panel="program"><span class="match-rank">03</span><img src="assets/track-program.png" alt="Metro Athletic Program" /><span><small>82% FIT</small><strong>Metro Athletic Program</strong><em>Multi-sport · 6.4 mi · 74 reviews</em><i>Best value</i></span><b>4.6 <i class="fa-solid fa-star"></i></b></button><footer><span><i class="fa-solid fa-shield-check"></i> Based on verified reviews and your profile</span><button class="reset-button" type="button" data-panel="discover">Explore all matches <i class="fa-solid fa-arrow-right"></i></button></footer></div></div></div>
       </section>
 
       <section class="section section--soft" id="discover-preview">
@@ -422,44 +445,36 @@
 
   <section class="screen" id="screen-app" aria-label="Chinstrap web app">
     <div class="app-shell">
-      <aside class="sidebar">
+      <aside class="sidebar product-nav">
         <button class="sidebar-brand reset-button" type="button" data-screen="landing"><img src="assets/chinstrap-notch-logo-v2.png" alt="Chinstrap" /></button>
         <nav class="sidebar-nav" aria-label="Product navigation">
-          <span class="sidebar-label">Workspace</span>
           <button class="active" type="button" data-panel="dashboard"><i class="fa-solid fa-grid-2"></i>Home</button>
           <button type="button" data-panel="community"><i class="fa-solid fa-bolt"></i>Community <b>Live</b></button>
           <button type="button" data-panel="discover"><i class="fa-solid fa-magnifying-glass"></i>Discover</button>
           <button type="button" data-panel="insight"><i class="fa-solid fa-wand-magic-sparkles"></i>Insight AI <b>12</b></button>
-          <span class="sidebar-label">My activity</span>
-          <button type="button" data-panel="network"><i class="fa-solid fa-user-group"></i>Network <b>6</b></button>
           <button type="button" data-panel="tournaments"><i class="fa-solid fa-trophy"></i>Tournaments</button>
-          <button type="button" data-panel="saved"><i class="fa-regular fa-bookmark"></i>Saved <b>3</b></button>
           <button type="button" data-panel="reviews"><i class="fa-regular fa-message"></i>Reviews</button>
-          <button type="button" data-panel="messages"><i class="fa-regular fa-comments"></i>Messages <b>2</b></button>
-          <span class="sidebar-label">Settings</span>
-          <button type="button" data-panel="verification"><i class="fa-solid fa-shield-check"></i>Verification</button>
-          <button type="button" data-panel="account"><i class="fa-regular fa-user"></i>Account &amp; billing</button>
+          <button type="button" data-panel="network"><i class="fa-solid fa-user-group"></i>Network</button>
+          <span class="nav-divider" aria-hidden="true"></span>
+          <button class="nav-utility" type="button" data-panel="saved" aria-label="Saved programs"><i class="fa-regular fa-bookmark"></i><span>Saved</span><b>3</b></button>
+          <button class="nav-utility" type="button" data-panel="messages" aria-label="Messages"><i class="fa-regular fa-comments"></i><span>Messages</span><b>2</b></button>
+          <button class="nav-utility" type="button" data-panel="verification" aria-label="Verification center"><i class="fa-solid fa-shield-check"></i><span>Verification</span></button>
         </nav>
         <div class="sidebar__footer">
-          <p><strong>Jamie Smith</strong><span>Community plan</span></p><button class="button button--secondary button--small" type="button" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</button>
+          <button class="nav-profile reset-button" type="button" data-panel="account"><span class="avatar">JS</span><span><strong>Jamie Smith</strong><small>Parent · Free</small></span></button><button class="nav-logout reset-button" type="button" data-logout aria-label="Log out"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
         </div>
       </aside>
       <main class="app-main">
-        <header class="app-topbar"><span><b>Thursday, October 1, 2026</b><small>Private workspace</small></span><button class="icon-button" type="button"
-            data-toast="You’re all caught up — no new alerts." aria-label="Notifications"><i class="fa-regular fa-bell"
-              aria-hidden="true"></i></button><button class="user-control reset-button" type="button"
-            data-panel="account"><span class="avatar">JS</span><span><strong>Jamie
-                Smith</strong><small>Parent</small></span><i class="fa-solid fa-chevron-down"
-              aria-hidden="true"></i></button></header>
+        <header class="app-topbar"><label class="global-search"><i class="fa-solid fa-magnifying-glass"></i><span class="sr-only">Search Chinstrap</span><input placeholder="Search programs, people, reviews, or tournaments" /></label><button class="button button--secondary button--small" type="button" data-panel="reviews"><i class="fa-solid fa-pen"></i> Write a review</button><button class="icon-button" type="button" data-toast="You’re all caught up — no new alerts." aria-label="Notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i></button></header>
 
         <section class="app-panel active" id="panel-dashboard">
-          <header class="panel-heading dashboard-heading"><div><span class="panel-kicker"><i class="fa-solid fa-sun"></i> Your private workspace</span><h1>Good morning, Jamie.</h1><p>Here’s what needs attention across your family’s sports journey.</p></div><button class="button button--primary" type="button" data-panel="discover">Find a program <i class="fa-solid fa-arrow-right"></i></button></header>
-          <div class="dashboard-stats"><article><span><i class="fa-solid fa-wand-magic-sparkles"></i> Insight credits</span><strong>12</strong><small>Explorer pack · 90-day expiry</small><button type="button" data-panel="insight">Open Insight</button></article><article><span><i class="fa-solid fa-shield-check"></i> Verification</span><strong>75%</strong><small>School email needs confirmation</small><button type="button" data-panel="verification">Finish verification</button></article><article><span><i class="fa-regular fa-bookmark"></i> Shortlist</span><strong>3</strong><small>2 programs ready to compare</small><button type="button" data-panel="saved">Review shortlist</button></article><article><span><i class="fa-solid fa-user-group"></i> Network</span><strong>6</strong><small>2 new connection requests</small><button type="button" data-panel="network">View network</button></article></div>
-          <div class="dashboard-grid">
-            <section class="surface dashboard-focus"><header><div><span class="panel-kicker">Next best action</span><h2>Confirm Jamie’s school affiliation</h2></div><b>5 min</b></header><p>A confirmed school or college connection unlocks verified review eligibility and raises confidence in Insight matches.</p><div class="action-steps"><span class="done"><i class="fa-solid fa-check"></i> Identity created</span><span class="done"><i class="fa-solid fa-check"></i> Sport &amp; level added</span><span><i>3</i> Verify school email</span><span><i>4</i> Connect current team</span></div><button class="button button--primary" type="button" data-panel="verification">Continue setup</button></section>
-            <section class="surface dashboard-activity"><header><h2>Today’s signal</h2><button type="button" data-panel="community">View community</button></header><article><img src="assets/social-avatar-1.png" alt="Jordan Ellis" /><span><strong>Jordan Ellis posted a new training clip</strong><small>Northstar Academy · 18m</small></span></article><article><span class="activity-icon"><i class="fa-solid fa-star"></i></span><span><strong>Northstar received 4 new verified reviews</strong><small>Coaching sentiment increased 3%</small></span></article><article><span class="activity-icon"><i class="fa-solid fa-calendar"></i></span><span><strong>Chicago Fall ID Showcase</strong><small>Registration closes tomorrow</small></span></article></section>
-          </div>
-          <section class="surface dashboard-products"><header><div><h2>Everything in one sports workspace</h2><p>Move between research, people, AI, events, and your private account without losing context.</p></div></header><div><button type="button" data-panel="community"><i class="fa-solid fa-bolt"></i><span><strong>Community</strong><small>Posts, people, and live sports moments</small></span></button><button type="button" data-panel="insight"><i class="fa-solid fa-wand-magic-sparkles"></i><span><strong>Insight Athlete</strong><small>AI college-fit and development analysis</small></span></button><button type="button" data-panel="discover"><i class="fa-solid fa-compass"></i><span><strong>Discover</strong><small>Programs, schools, teams, and agents</small></span></button><button type="button" data-panel="tournaments"><i class="fa-solid fa-trophy"></i><span><strong>Tournaments</strong><small>Seasons, schedules, and event reviews</small></span></button></div></section>
+          <section class="member-hero">
+            <div class="member-hero__copy"><span class="panel-kicker"><i class="fa-solid fa-sparkles"></i> Made for Jamie</span><h1>Your whole sports journey,<br /><em>finally connected.</em></h1><p>Discover the right programs, hear from real families, and use Insight AI to understand your athlete’s next best move.</p><div class="button-row"><button class="button button--lime" type="button" data-panel="insight">Ask Insight AI <i class="fa-solid fa-arrow-right"></i></button><button class="button button--ghost-light" type="button" data-panel="discover">Explore programs</button></div><div class="member-hero__proof"><span><i class="fa-solid fa-shield-check"></i> 75% verified</span><span><i class="fa-solid fa-wand-magic-sparkles"></i> 12 AI credits</span><span><i class="fa-solid fa-bookmark"></i> 3 saved</span></div></div>
+            <div class="member-hero__visual"><img src="assets/community-team.png" alt="Athletes gathered together before a game" /><article class="floating-fit"><small>YOUR TOP MATCH</small><div><strong>91%</strong><span>Northstar Academy<small>Soccer · Chicago</small></span></div><footer><span>Development</span><b>Excellent fit</b></footer></article><button class="hero-ai-orb" type="button" data-panel="insight" aria-label="Open Insight AI"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Ask Insight</span></button></div>
+          </section>
+          <section class="journey-strip"><button type="button" data-panel="verification"><span><i class="fa-solid fa-shield-check"></i> Trust profile</span><strong>Finish school verification</strong><small>Unlock verified reviews and better matches <i class="fa-solid fa-arrow-right"></i></small></button><button type="button" data-panel="messages"><span><i class="fa-solid fa-comments"></i> Conversations</span><strong>2 new messages</strong><small>Coach Maya replied today <i class="fa-solid fa-arrow-right"></i></small></button><button type="button" data-panel="tournaments"><span><i class="fa-solid fa-trophy"></i> This week</span><strong>Fall ID Showcase</strong><small>Registration closes tomorrow <i class="fa-solid fa-arrow-right"></i></small></button><button type="button" data-panel="insight"><span><i class="fa-solid fa-wand-magic-sparkles"></i> Insight plan</span><strong>Explorer · 12 credits</strong><small>View analysis &amp; plans <i class="fa-solid fa-arrow-right"></i></small></button></section>
+          <section class="home-discovery"><header><div><span class="panel-kicker">Matched to your priorities</span><h2>Programs worth a closer look</h2></div><button class="reset-button" type="button" data-panel="discover">See all matches <i class="fa-solid fa-arrow-right"></i></button></header><div class="home-programs"><button class="home-program home-program--wide" type="button" data-panel="program"><img src="assets/northstar-school.png" alt="Northstar Academy campus" /><span class="home-program__tag"><i class="fa-solid fa-circle-check"></i> Verified</span><span class="home-program__copy"><small>91% AI FIT · SOCCER</small><strong>Northstar Academy</strong><em>4.8 <i class="fa-solid fa-star"></i> · 142 reviews · Chicago</em></span></button><button class="home-program" type="button" data-panel="program"><img src="assets/soccer-stadium.jpg" alt="Lakeside soccer stadium" /><span class="home-program__copy"><small>86% AI FIT · SOCCER</small><strong>Lakeside FC</strong><em>4.7 <i class="fa-solid fa-star"></i> · 3.2 mi</em></span></button><button class="home-program home-program--ai" type="button" data-panel="insight"><span><i class="fa-solid fa-wand-magic-sparkles"></i></span><small>INSIGHT AI</small><strong>Compare these programs across 18 fit signals.</strong><em>Run a new analysis <i class="fa-solid fa-arrow-right"></i></em></button></div></section>
+          <section class="home-lower"><div class="home-community"><header><div><span class="panel-kicker">From your community</span><h2>What people are talking about</h2></div><button class="reset-button" type="button" data-panel="community">Open feed <i class="fa-solid fa-arrow-right"></i></button></header><article><img src="assets/social-avatar-1.png" alt="Jordan Ellis" /><span><strong>Jordan Ellis <i class="fa-solid fa-circle-check verified"></i></strong><small>Verified athlete · 18m</small><p>“Specific coaching feedback changed how I approached today’s session.”</p></span><img class="home-community__media" src="assets/social-athlete.png" alt="Soccer training" /></article></div><div class="home-actions"><span class="panel-kicker">Quick starts</span><h2>What do you want to do?</h2><button type="button" data-panel="reviews"><i class="fa-solid fa-star"></i><span><strong>Write a verified review</strong><small>Help another family decide</small></span><b>→</b></button><button type="button" data-panel="network"><i class="fa-solid fa-user-plus"></i><span><strong>Find people to follow</strong><small>Coaches, athletes, and parents</small></span><b>→</b></button><button type="button" data-panel="saved"><i class="fa-solid fa-scale-balanced"></i><span><strong>Compare your shortlist</strong><small>3 programs saved</small></span><b>→</b></button></div></section>
         </section>
 
         <section class="app-panel" id="panel-community">

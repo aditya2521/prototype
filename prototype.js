@@ -110,6 +110,9 @@ document.addEventListener("click", (event) => {
   const scrollButton = event.target.closest("[data-scroll]");
   if (scrollButton) {
     showScreen("landing", false);
+    document.querySelectorAll(".site-nav .nav-pill").forEach((item) => {
+      item.classList.toggle("active", item === scrollButton);
+    });
     requestAnimationFrame(() => document.getElementById(scrollButton.dataset.scroll)?.scrollIntoView({ behavior: "smooth" }));
   }
 
