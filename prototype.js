@@ -1,3 +1,5 @@
+import { journeys, selectOnboardingRole, getOnboardingRole, onboardingGuidance } from "./src/onboarding.js";
+
 const state = {
   screen: "landing",
   panel: "dashboard",
@@ -5,6 +7,9 @@ const state = {
   isAuthenticated: false,
   pendingPanel: "dashboard",
   comparison: new Set(["Northstar Academy", "Lakeside United"]),
+  reviewCategory: "all",
+  reviewTarget: "",
+  reviewKind: "",
 };
 
 const screens = document.querySelectorAll(".screen");
@@ -12,7 +17,96 @@ const panels = document.querySelectorAll(".app-panel");
 const toast = document.getElementById("toast");
 const toastMessage = document.getElementById("toast-message");
 const reviewModal = document.getElementById("review-modal");
+const reviewEntitySelect = document.getElementById("review-entity-select");
+const reviewRelationship = document.getElementById("review-relationship");
+const siteHeader = document.querySelector(".site-header");
 let toastTimer;
+
+const reviewStories = {
+  school: [
+    ["Strong support on and off the field", "Academic expectations were clear, the staff communicated early, and the athlete support team followed through."],
+    ["A competitive program with useful structure", "Training and college preparation felt organized. Families would benefit from earlier updates when travel plans change."],
+  ],
+  club: [
+    ["Clear development plan and excellent feedback", "The staff explained where my athlete was progressing and where more work was needed. Communication stayed consistent."],
+    ["Strong experience; communication can improve", "The experience was challenging in a positive way and the people cared about growth. A few schedule changes arrived late."],
+  ],
+  professional: [
+    ["Advice was specific and actionable", "Sessions focused on real development priorities, with honest feedback and a clear plan for what to work on next."],
+    ["Professional, responsive, and transparent", "Expectations, pricing, and next steps were explained up front. Follow-up was reliable throughout the season."],
+  ],
+  event: [
+    ["Well organized and worth the trip", "Check-in, schedules, and field directions were easy to follow. The competition level matched what was advertised."],
+    ["Good exposure with a few timing delays", "The event delivered useful competition and coach visibility. More real-time updates would make schedule changes easier."],
+  ],
+};
+
+function updateReviewRelationships(kind = "") {
+  let options = ["Parent / guardian", "Athlete", "Alumni"];
+  if (/tournament|league|event/i.test(kind)) options = ["Athlete / participant", "Parent / guardian", "Coach / team staff"];
+  if (/coach|trainer|agency|agent/i.test(kind)) options = ["Athlete / client", "Parent / guardian", "Organization partner"];
+  reviewRelationship.innerHTML = options.map((label) => `<option>${label}</option>`).join("");
+}
+
+function setReviewTarget(name = "", kind = "") {
+  state.reviewTarget = name;
+  state.reviewKind = kind;
+  reviewEntitySelect.value = name;
+  document.getElementById("review-title").textContent = name ? `Review ${name}` : "Write a verified review";
+  document.getElementById("review-target-kind").textContent = kind || "Choose from every verified entity on Chinstrap.";
+  document.getElementById("review-eligibility-target").textContent = name || "the selected entity";
+  updateReviewRelationships(kind);
+}
+
+function openReviewModal(name = "", kind = "") {
+  setReviewTarget(name, kind);
+  reviewModal.classList.add("open");
+  document.body.classList.add("modal-open");
+  requestAnimationFrame(() => (name ? reviewModal.querySelector("[data-rating]") : reviewEntitySelect).focus());
+}
+
+function closeReviewModal() {
+  reviewModal.classList.remove("open");
+  document.body.classList.remove("modal-open");
+}
+
+function filterReviewEntities() {
+  const query = document.getElementById("review-entity-search").value.trim().toLowerCase();
+  let visible = 0;
+  document.querySelectorAll("[data-review-card]").forEach((card) => {
+    const matchesCategory = state.reviewCategory === "all" || card.dataset.reviewType === state.reviewCategory;
+    const matchesQuery = !query || card.textContent.toLowerCase().includes(query);
+    card.hidden = !(matchesCategory && matchesQuery);
+    if (!card.hidden) visible += 1;
+  });
+  document.getElementById("review-empty").classList.toggle("show", visible === 0);
+}
+
+function showReviewDetail(card) {
+  const name = card.dataset.reviewName;
+  const kind = card.querySelector(".tag")?.textContent.replace("Verified ", "") || "Verified entity";
+  document.getElementById("review-detail-name").textContent = name;
+  document.getElementById("review-detail-kind").textContent = `${kind} · ${card.querySelector("p")?.textContent || "Verified on Chinstrap"}`;
+  document.getElementById("review-confidence").textContent = card.dataset.reviewConfidence;
+  document.getElementById("review-rating").textContent = card.dataset.reviewRating;
+  document.getElementById("review-count").textContent = card.dataset.reviewCount;
+  const reviewButton = document.querySelector("#review-detail [data-review-entity]");
+  reviewButton.dataset.reviewEntity = name;
+  reviewButton.dataset.reviewKind = card.querySelector("[data-review-entity]").dataset.reviewKind;
+  reviewButton.textContent = `Review ${name}`;
+  const stories = reviewStories[card.dataset.reviewType] || reviewStories.club;
+  document.getElementById("review-story-title-one").textContent = stories[0][0];
+  document.getElementById("review-story-copy-one").textContent = stories[0][1];
+  document.getElementById("review-story-title-two").textContent = stories[1][0];
+  document.getElementById("review-story-copy-two").textContent = stories[1][1];
+  document.getElementById("review-detail").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function updateStickyHeader() {
+  siteHeader?.classList.toggle("is-scrolled", state.screen === "landing" && window.scrollY > 40);
+}
+
+window.addEventListener("scroll", updateStickyHeader, { passive: true });
 
 function showToast(message) {
   toastMessage.textContent = message;
@@ -30,7 +124,8 @@ function showScreen(name, updateHash = true) {
   screens.forEach((screen) => {
     screen.classList.toggle("active", screen.id === `screen-${name}`);
   });
-  window.scrollTo({ top: 0, behavior: "instant" });
+  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  updateStickyHeader();
   if (updateHash) history.pushState(null, "", name === "landing" ? "#home" : `#${name}`);
 }
 
@@ -58,11 +153,28 @@ function setOnboardingStep(step) {
     section.classList.toggle("active", Number(section.dataset.step) === state.onboardingStep);
   });
   document.getElementById("step-label").textContent = `Step ${state.onboardingStep} of 6`;
+  document.getElementById("onboarding-selection").hidden = state.onboardingStep !== 1;
   document.getElementById("progress-fill").style.width = `${(state.onboardingStep / 6) * 100}%`;
   document.getElementById("step-back").style.visibility = state.onboardingStep === 1 ? "hidden" : "visible";
   document.getElementById("step-next").innerHTML = state.onboardingStep === 6
     ? 'Create my workspace <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>'
     : 'Continue <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>';
+  const guidance = onboardingGuidance(getOnboardingRole(), state.onboardingStep);
+  document.getElementById("onboarding-aside-title").textContent = guidance[0];
+  document.getElementById("onboarding-aside-copy").textContent = guidance[1];
+  document.querySelectorAll("[data-onboarding-jump]").forEach((button) => {
+    const buttonStep = Number(button.dataset.onboardingJump);
+    button.classList.toggle("active", buttonStep === state.onboardingStep);
+    button.classList.toggle("complete", buttonStep < state.onboardingStep);
+    button.setAttribute("aria-current", buttonStep === state.onboardingStep ? "step" : "false");
+  });
+  document.querySelector(".onboarding__main")?.scrollTo({ top: 0, behavior: "smooth" });
+  if (state.screen === "onboarding") {
+    window.scrollTo({ top: 0, behavior: "instant" });
+    const heading = document.querySelector(".onboarding-step.active h1");
+    heading.setAttribute("tabindex", "-1");
+    heading.focus({ preventScroll: true });
+  }
 }
 
 function updateComparison() {
@@ -92,9 +204,7 @@ document.addEventListener("click", (event) => {
   const screenButton = event.target.closest("[data-screen]");
   if (screenButton) {
     if (screenButton.dataset.role) {
-      document.querySelectorAll("[data-role-choice]").forEach((choice) => {
-        choice.classList.toggle("selected", choice.dataset.roleChoice === screenButton.dataset.role);
-      });
+      selectOnboardingRole(screenButton.dataset.role);
     }
     if (screenButton.dataset.stepStart) {
       setOnboardingStep(Number(screenButton.dataset.stepStart));
@@ -128,10 +238,15 @@ document.addEventListener("click", (event) => {
 
   const roleChoice = event.target.closest("[data-role-choice]");
   if (roleChoice) {
-    document.querySelectorAll("[data-role-choice]").forEach((choice) => {
-      choice.classList.toggle("selected", choice === roleChoice);
-    });
+    selectOnboardingRole(roleChoice.dataset.roleChoice);
+    setOnboardingStep(1);
+    roleChoice.focus({ preventScroll: true });
   }
+
+  if (event.target.closest("[data-setup-skip]")) setOnboardingStep(state.onboardingStep + 1);
+
+  const onboardingJump = event.target.closest("[data-onboarding-jump]");
+  if (onboardingJump) setOnboardingStep(Number(onboardingJump.dataset.onboardingJump));
 
   const interest = event.target.closest(".interest-grid button");
   if (interest) interest.classList.toggle("selected");
@@ -166,13 +281,25 @@ document.addEventListener("click", (event) => {
   const toastButton = event.target.closest("[data-toast]");
   if (toastButton) showToast(toastButton.dataset.toast);
 
-  const modalButton = event.target.closest("[data-modal]");
-  if (modalButton) {
-    reviewModal.classList.add("open");
-    reviewModal.querySelector("[data-modal-close]").focus();
+  const reviewCategory = event.target.closest("[data-review-category]");
+  if (reviewCategory) {
+    state.reviewCategory = reviewCategory.dataset.reviewCategory;
+    document.querySelectorAll("[data-review-category]").forEach((button) => button.classList.toggle("active", button === reviewCategory));
+    filterReviewEntities();
   }
 
-  if (event.target.closest("[data-modal-close]")) reviewModal.classList.remove("open");
+  const reviewView = event.target.closest("[data-review-view]");
+  if (reviewView) showReviewDetail(reviewView.closest("[data-review-card]"));
+
+  const reviewEntity = event.target.closest("[data-review-entity]");
+  if (reviewEntity) openReviewModal(reviewEntity.dataset.reviewEntity, reviewEntity.dataset.reviewKind);
+
+  if (event.target.closest("[data-review-open]")) openReviewModal();
+
+  const modalButton = event.target.closest("[data-modal]");
+  if (modalButton) openReviewModal("Northstar Academy", "Club program");
+
+  if (event.target.closest("[data-modal-close]")) closeReviewModal();
 
   const ratingButton = event.target.closest("[data-rating]");
   if (ratingButton) {
@@ -224,7 +351,9 @@ document.getElementById("step-next").addEventListener("click", () => {
     state.isAuthenticated = true;
     state.pendingPanel = "dashboard";
     showPanel("dashboard");
-    showToast("Welcome to Chinstrap — your private workspace is ready.");
+    const journey = journeys[getOnboardingRole()];
+    document.querySelector(".nav-profile small").textContent = `${journey.label} · Demo`;
+    showToast(`Your ${journey.label.toLowerCase()} setup is ready. Welcome to the demo workspace.`);
   }
 });
 
@@ -286,12 +415,24 @@ document.getElementById("message-form").addEventListener("submit", (event) => {
 });
 
 document.getElementById("review-submit").addEventListener("click", () => {
-  reviewModal.classList.remove("open");
-  showToast("Review draft saved. Verification is the next step.");
+  if (!state.reviewTarget) {
+    reviewEntitySelect.focus();
+    showToast("Choose who or what you’re reviewing first.");
+    return;
+  }
+  closeReviewModal();
+  showToast(`Review for ${state.reviewTarget} saved. Verification is next.`);
+});
+
+document.getElementById("review-entity-search").addEventListener("input", filterReviewEntities);
+
+reviewEntitySelect.addEventListener("change", () => {
+  const option = reviewEntitySelect.selectedOptions[0];
+  setReviewTarget(reviewEntitySelect.value, option?.dataset.kind || "");
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") reviewModal.classList.remove("open");
+  if (event.key === "Escape") closeReviewModal();
 });
 
 window.addEventListener("popstate", () => {
@@ -307,5 +448,6 @@ if (initialRoute === "home") showScreen("landing", false);
 else if (initialRoute === "login") showScreen("login", false);
 else if (initialRoute === "onboarding") showScreen("onboarding", false);
 else showPanel(document.getElementById(`panel-${initialRoute}`) ? initialRoute : "dashboard", false);
+selectOnboardingRole("parent");
 setOnboardingStep(1);
 updateComparison();

@@ -1,4 +1,9 @@
 node_modules/
 dist/
+.firebase/
+coverage/
 .DS_Store
 *.log
+.env
+.env.*
+!.env.example

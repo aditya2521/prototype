@@ -15,3 +15,7 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - The hero should have a centered white notch/tab that holds the official Chinstrap logo, echoing the approved reference composition without cloning it.
 - Bring the mobile product's social layer into the web prototype: a personalized highlights feed, posts and media, reactions, comments, creator profiles, notifications, network discovery, and post creation.
 - Preserve the evidence-first discovery, comparisons, verified reviews, messages, profile, and role-aware onboarding already established in the web prototype.
+- Keep authenticated navigation in a left sidebar. Keep the public landing header separate.
+- Use the original project's light cream app-download banner and sports imagery as the reference for that section.
+- User authorized Firebase Hosting deployment to `prototype-7b5bd` and publishing only this project to `https://github.com/aditya2521/prototype.git`. Original Chinstrap projects are read-only references.
+- All five onboarding roles need distinct profile, context, connection, verification, and access steps. School details must not be required for parents, coaches, agents, or organizations. Invitations and verification are optional and explicitly simulated in the prototype.

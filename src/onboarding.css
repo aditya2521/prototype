@@ -1,0 +1,97 @@
+/* A balanced role picker and a consistent setup shell. */
+.onboarding { grid-template-columns: 310px minmax(0, 1fr); }
+.onboarding__aside { padding: 30px 26px; gap: 24px; }
+.onboarding__aside > div { margin-top: 30px; }
+.onboarding__aside h2 { font-size: 30px; line-height: 1.14; letter-spacing: -.045em; }
+.onboarding__aside p { font-size: 13px; line-height: 1.65; }
+.onboarding__aside::after { pointer-events: none; }
+.onboarding-step-map { position: relative; z-index: 1; gap: 6px; }
+.onboarding-step-map button { min-height: 51px; gap: 12px; }
+.onboarding-step-map strong { font-size: 12px; }
+.onboarding-step-map small { font-size: 10px; color: #a4b8aa; }
+.onboarding-step-map button.complete > i { position: relative; }
+.onboarding-step-map button.complete > i::after { position: absolute; }
+.onboarding__aside > ul { font-size: 11px; gap: 12px; }
+.onboarding__main { padding: 28px clamp(28px, 5vw, 80px) 35px; }
+.onboarding__top { width: min(100%, 760px); margin-inline: auto; }
+.onboarding__content { width: min(100%, 760px); margin-top: clamp(32px, 6vh, 60px); }
+.onboarding-step::before { font-size: 10px; margin-bottom: 14px; }
+.onboarding-step h1 { font-size: clamp(34px, 3.6vw, 48px); line-height: 1.08; letter-spacing: -.045em; }
+.onboarding-step > p { font-size: 14px; margin-bottom: 26px; }
+.choice-grid--roles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.choice-grid--roles > button { display: grid; grid-template-columns: 44px 1fr; align-content: center; column-gap: 14px; min-height: 115px; padding: 20px; border-color: #dce5df; box-shadow: none; transition: background .15s, border-color .15s, box-shadow .15s; }
+.choice-grid--roles > button > i:first-child { display: grid; grid-column: 1; grid-row: 1 / 3; width: 44px; height: 44px; place-items: center; margin: 0; border-radius: 12px; background: #eff5f1; font-size: 20px; }
+.choice-grid--roles > button strong { grid-column: 2; padding-right: 15px; margin: 0 0 5px; font-size: 15px; line-height: 1.35; }
+.choice-grid--roles > button span { grid-column: 2; max-width: 330px; font-size: 12px; line-height: 1.5; }
+.choice-grid--roles > button:last-child { grid-column: 1 / -1; min-height: 94px; }
+.choice-grid--roles > button.selected { background: #f0faf4; border-color: #3b9661; box-shadow: 0 0 0 3px #3b96610b; }
+.choice-grid--roles > button.selected > i:first-child { background: #dcf3e5; }
+.choice-grid--roles .selected-check { top: 14px; right: 14px; font-size: 14px; }
+.choice-grid--roles > button:focus-visible { outline: 3px solid #76caa0; outline-offset: 3px; }
+.onboarding__footer { width: min(100%, 760px); align-items: center; margin-top: 22px; padding-top: 20px; }
+.onboarding-selection { margin-right: auto; color: #587261; font-size: 12px; }
+.onboarding__footer #step-back { margin-right: auto; }
+.onboarding__footer #step-back[style*="hidden"] { display: none; }
+.onboarding-selection[hidden] { display: none; }
+.onboarding-step .form-grid input,.onboarding-step .form-grid select { font-size: 14px; }
+.onboarding-step .form-grid label { font-size: 12px; }
+.onboarding-step h1:focus { outline: none; }
+.setup-note { display: flex; align-items: flex-start; gap: 10px; margin-top: 22px; padding: 14px 16px; background: #edf5f0; border-radius: 12px; color: #52685a; font-size: 12px; line-height: 1.6; }
+.setup-note > i { margin-top: 3px; color: #338355; }
+.setup-invitations { display: grid; gap: 14px; }
+.setup-invitations article { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 16px; padding: 22px; background: #fff; border: 1px solid #dce5df; border-radius: 16px; }
+.setup-invitations article > i { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; color: #338355; background: #edf5f0; }
+.setup-invitations h3 { margin: 0 0 6px; font-size: 16px; }
+.setup-invitations p { margin: 0 0 16px; color: #687788; font-size: 13px; line-height: 1.5; }
+.setup-invitations label { display: grid; gap: 7px; font-size: 12px; font-weight: 600; }
+.setup-invitations input { min-width: 0; width: 100%; height: 48px; border: 1px solid #cad6d0; border-radius: 10px; padding: 0 14px; background: #fff; font: inherit; font-size: 14px; }
+.setup-invitations button { margin-top: 12px; }
+.invite-status { display: block; margin-top: 10px; color: #338355; font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
+.invite-status:empty { display: none; }
+.onboarding-step .verification-options label { grid-template-columns: 18px 38px minmax(0, 1fr); padding: 17px; }
+.onboarding-step .verification-options strong { font-size: 14px; }
+.onboarding-step .verification-options small { font-size: 12px; line-height: 1.5; }
+.setup-proof-fields { margin-top: 20px; }
+.setup-proof-fields .form-grid { grid-template-columns: 1fr; }
+.onboarding-step .form-grid input[type="file"] { height: auto; line-height: 1.5; padding: 12px; }
+.onboarding-step input::file-selector-button { border: 0; padding: 7px 12px; margin-right: 10px; border-radius: 6px; color: #26613e; background: #e8f4ed; cursor: pointer; }
+.setup-plans { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.setup-plans label { display: flex; align-items: flex-start; gap: 12px; padding: 22px; }
+.setup-plans label > input { flex-shrink: 0; margin: 1px 0 0; }
+.setup-plans strong { font-size: 18px; }
+.setup-plans small { font-size: 10px; }
+.setup-plans b { font-size: 12px; line-height: 1.6; font-weight: 400; }
+.setup-plans em { font-size: 16px; }
+.setup-privacy { margin-top: 24px; }
+.setup-privacy label { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 16px 0; border-bottom: 1px solid #e0e8e3; font-size: 13px; line-height: 1.5; cursor: pointer; }
+.setup-privacy input { flex-shrink: 0; width: 18px; height: 18px; }
+.onboarding-step input[type="radio"], .onboarding-step input[type="checkbox"] { accent-color: #338355; }
+.setup-ready { display: flex; gap: 14px; margin-top: 24px; padding: 18px; background: #eaf6ee; border-radius: 12px; color: #26613e; }
+.setup-ready > i { margin-top: 2px; font-size: 20px; }
+.setup-ready strong { display: block; font-size: 14px; }
+.setup-ready small { display: block; margin-top: 6px; color: #52685a; font-size: 12px; line-height: 1.6; }
+.onboarding-step input:focus-visible, .onboarding-step select:focus-visible, .onboarding-step button:focus-visible { outline: 3px solid #4d9f70; outline-offset: 3px; }
+.modal-wrap { z-index: 150; }
+@media (max-width: 1100px) { .onboarding { grid-template-columns: 270px minmax(0, 1fr); } .onboarding__aside { padding: 26px 22px; } .onboarding__aside h2 { font-size: 27px; } .choice-grid--roles > button { padding: 16px; column-gap: 10px; } }
+@media (max-width: 900px) { .onboarding__aside > div,.onboarding__aside > ul { display: block; } .onboarding__aside > ul { display: grid; } }
+@media (max-width: 800px) {
+  .onboarding { display: block; }
+  .onboarding__aside { padding: 18px 22px; }
+  .onboarding__aside > div,.onboarding__aside > ul,.onboarding-step-map { display: none; }
+  .onboarding__main { padding: 24px; }
+  .onboarding__content { margin-top: 32px; }
+  .onboarding__top { flex-direction: row; align-items: center; }
+  .progress-wrap { width: 190px; }
+}
+@media (max-width: 560px) {
+  .onboarding__main { padding: 18px; }
+  .onboarding__top { gap: 12px; }
+  .onboarding__top > button { font-size: 11px; padding: 0; }
+  .progress-wrap { width: 140px; font-size: 10px; }
+  .onboarding-step h1 { font-size: 34px; }
+  .onboarding-step > p { font-size: 13px; }
+  .choice-grid--roles { grid-template-columns: 1fr; gap: 10px; }
+  .choice-grid--roles > button,.choice-grid--roles > button:last-child { min-height: 94px; grid-column: auto; }
+  .onboarding-selection { max-width: 125px; font-size: 10px; }
+  .onboarding__footer #step-next { min-width: 135px; }
+}
