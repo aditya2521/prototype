@@ -17,5 +17,6 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Preserve the evidence-first discovery, comparisons, verified reviews, messages, profile, and role-aware onboarding already established in the web prototype.
 - Keep authenticated navigation in a left sidebar. Keep the public landing header separate.
 - Use the original project's light cream app-download banner and sports imagery as the reference for that section.
+- Keep the athlete-story image a transparent athlete cutout over the CSS halo; do not bake a rectangular green background into the image, because its edge cuts across the face visually.
 - User authorized Firebase Hosting deployment to `prototype-7b5bd` and publishing only this project to `https://github.com/aditya2521/prototype.git`. Original Chinstrap projects are read-only references.
 - All five onboarding roles need distinct profile, context, connection, verification, and access steps. School details must not be required for parents, coaches, agents, or organizations. Invitations and verification are optional and explicitly simulated in the prototype.
